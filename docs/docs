@@ -1,0 +1,18 @@
+Podział strony:
+    1. Frontend(Yew)
+    2. Backend(Actix)
+    3. Baza danych(PostgreSQL)
+
+Frontend:
+    components:
+        big:
+            licznik
+            opis
+            kontakt
+            ankieta
+            wywiady(historie?)
+        small:
+            todo
+
+Backend:
+    todo
