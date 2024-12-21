@@ -1,0 +1,61 @@
+/* Pastelowe kolory */
+:root {
+    --pastel-red: #FFADAD;
+    --pastel-orange: #FFD6A5;
+    --pastel-yellow: #FDFFB6;
+    --pastel-green: #CAFFBF;
+    --pastel-blue: #9BF6FF;
+    --pastel-purple: #A0C4FF;
+
+    /* Neutralne kolory */
+    --text-color: #333333;
+    --background-color: #F8F9FA;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--pastel-red);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+button {
+    background-color: var(--pastel-green);
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: var(--pastel-blue);
+}
+
+.card {
+    background-color: var(--pastel-yellow);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    width: 80%;
+}
+
+footer {
+    background-color: var(--pastel-purple);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

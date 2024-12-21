@@ -1,9 +1,0 @@
-[package]
-name = "ruch_oporu"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-
-[workspace]
-members = ["frontend", "backend", "components"]
