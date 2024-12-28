@@ -1,6 +1,5 @@
-use actix_web::{get, web, App, HttpServer, Responder, HttpResponse};
-use serde::{Deserialize, Serialize};
-use sqlx::{postgres::PgPoolOptions, PgPool, types::{Json, JsonValue}};
+use actix_web::{get, Responder, HttpResponse};
+use serde::Serialize;
 
 // Struktura dla odpowiedzi JSON
 #[derive(Serialize)]

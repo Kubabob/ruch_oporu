@@ -2,6 +2,9 @@ use yew::prelude::*;
 use wasm_bindgen_futures::spawn_local;
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
+use yew_router::prelude::*;
+
+use crate::navigator::Route;
 
 #[derive(Clone, PartialEq, Serialize, Deserialize)]
 struct User {
@@ -64,13 +67,17 @@ pub fn add_user() -> Html {
             <input
                 placeholder="Imię"
                 value={(*name).clone()}
-                oninput={Callback::from(move |e: InputEvent| name.set(e.target_unchecked_into::<web_sys::HtmlInputElement>().value()))}
+                oninput={Callback::from(move |e: InputEvent| {
+                    name.set(e.target_unchecked_into::<web_sys::HtmlInputElement>().value())
+                })}
             />
 
             <input
                 placeholder="Email"
                 value={(*email).clone()}
-                oninput={Callback::from(move |e: InputEvent| email.set(e.target_unchecked_into::<web_sys::HtmlInputElement>().value()))}
+                oninput={Callback::from(move |e: InputEvent| {
+                    email.set(e.target_unchecked_into::<web_sys::HtmlInputElement>().value())
+                })}
             />
             <button onclick={add_user}>{ "Dodaj użytkownika" }</button>
             
@@ -82,8 +89,7 @@ pub fn add_user() -> Html {
 #[function_component(ShowUsers)]
 pub fn show_users() -> Html {
     let users = use_state(|| Vec::new());
-    let name = use_state(|| "".to_string());
-    let email = use_state(|| "".to_string());
+    
 
     // Pobieranie listy użytkowników
     let fetch_users = {
@@ -116,6 +122,12 @@ pub fn show_users() -> Html {
                     }) }
                 </ul>
             </div>
+            <footer>
+                <Link<Route> to={Route::Home}>
+                    <button>{ "Powrót do strony głównej" }</button>
+                </Link<Route>>
+                <p>{ "Wszelkie prawa zastrzeżone © 2024" }</p>
+            </footer>
         </>
     }
 }

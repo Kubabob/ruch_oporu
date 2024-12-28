@@ -1,12 +1,7 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
 
-mod survey;
-mod hello;
-mod users;
-
-use survey::Survey;
-use hello::Hello;
-use users::{AddUser, ShowUsers};
+use frontend::navigator::{Route, switch};
 
 
 #[function_component(App)]
@@ -14,17 +9,10 @@ fn app() -> Html {
 
     html! {
         <>
-            <Hello />
-
-            <AddUser />
+            <BrowserRouter>
+                <Switch<Route> render={switch} />
+            </BrowserRouter>
             
-            <ShowUsers />
-
-            <Survey />
-
-            <footer>
-                <p>{ "Wszelkie prawa zastrzeżone © 2024" }</p>
-            </footer>
         </>
     }
 }
