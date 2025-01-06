@@ -4,3 +4,8 @@ pub mod users;
 pub mod navigator;
 pub mod not_found;
 pub mod home;
+pub mod description;
+pub mod rules;
+pub mod rodo;
+pub mod survey_counter;
+pub mod survey_file_upload;

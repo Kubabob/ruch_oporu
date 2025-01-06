@@ -8,8 +8,9 @@ use actix_cors::Cors;
 mod survey;
 mod users;
 mod hello;
+mod upload_file;
 
-use survey::{get_survey, submit_survey};
+use survey::{get_survey, get_survey_number, submit_survey, send_survey_file, get_survey_uploads, get_survey_uploads_number};
 use hello::hello_json;
 use users::{create_user, delete_user, get_users, update_user};
 
@@ -37,6 +38,10 @@ async fn main() -> std::io::Result<()> {
             .service(delete_user)
             .service(submit_survey)
             .service(get_survey)
+            .service(get_survey_number)
+            .service(send_survey_file)
+            .service(get_survey_uploads)
+            .service(get_survey_uploads_number)
     })
     .bind("127.0.0.1:8080")?
     .run()
