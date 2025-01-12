@@ -8,21 +8,25 @@ use crate::navigator::Route;
 
 #[derive(Clone, PartialEq, Serialize, Deserialize)]
 struct User {
-    id: i32,
-    name: String,
+    //id: i32,
+    imie: String,
+    nazwisko: String,
     email: String,
 }
 
 #[derive(Clone, PartialEq, Serialize, Deserialize)]
 struct CreateUser {
-    name: String,
+    imie: String,
+    nazwisko: String,
     email: String,
 }
 
 #[function_component(AddUser)]
 pub fn add_user() -> Html {
     let users = use_state(|| Vec::new());
-    let name = use_state(|| "".to_string());
+
+    let imie = use_state(|| "".to_string());
+    let nazwisko = use_state(|| "".to_string());
     let email = use_state(|| "".to_string());
 
     
@@ -30,25 +34,28 @@ pub fn add_user() -> Html {
     // Dodawanie użytkownika
     let add_user = {
         let users = users.clone();
-        let name = name.clone();
+        let imie = imie.clone();
+        let nazwisko = nazwisko.clone();
         let email = email.clone();
         Callback::from(move |_| {
-            let name_value = (*name).clone();
+            let imie_value = (*imie).clone();
+            let nazwisko_value = (*nazwisko).clone();
             let email_value = (*email).clone();
             let users = users.clone();
             spawn_local(async move {
                 let client = Client::new();
                 let new_user = CreateUser { 
-                    name: name_value, 
+                    imie: imie_value, 
+                    nazwisko: nazwisko_value,
                     email: email_value 
                 };
-                let _ = client.post("http://127.0.0.1:8080/users")
+                let _ = client.post("http://127.0.0.1:8080/uzytkownicy")
                     .json(&new_user)
                     .send()
                     .await;
 
                 // Odśwież listę po dodaniu użytkownika
-                let response = client.get("http://127.0.0.1:8080/users")
+                let response = client.get("http://127.0.0.1:8080/uzytkownicy")
                     .send()
                     .await;
                 if let Ok(updated_users) = response.unwrap().json::<Vec<User>>().await {
@@ -66,9 +73,17 @@ pub fn add_user() -> Html {
             
             <input
                 placeholder="Imię"
-                value={(*name).clone()}
+                value={(*imie).clone()}
                 oninput={Callback::from(move |e: InputEvent| {
-                    name.set(e.target_unchecked_into::<web_sys::HtmlInputElement>().value())
+                    imie.set(e.target_unchecked_into::<web_sys::HtmlInputElement>().value())
+                })}
+            />
+
+            <input
+                placeholder="Nazwisko"
+                value={(*nazwisko).clone()}
+                oninput={Callback::from(move |e: InputEvent| {
+                    nazwisko.set(e.target_unchecked_into::<web_sys::HtmlInputElement>().value())
                 })}
             />
 
@@ -98,7 +113,7 @@ pub fn show_users() -> Html {
             let users = users.clone();
             spawn_local(async move {
                 let client = Client::new();
-                if let Ok(response) = client.get("http://127.0.0.1:8080/users")
+                if let Ok(response) = client.get("http://127.0.0.1:8080/uzytkownicy")
                     .send()
                     .await
                 {
@@ -115,10 +130,10 @@ pub fn show_users() -> Html {
             // Wyświetlanie listy użytkowników
             <div>
                 <h2>{ "Lista użytkowników" }</h2>
-                <button onclick={fetch_users.clone()}>{ "Odśwież listę" }</button>
+                <button onclick={fetch_users}>{ "Odśwież listę" }</button>
                 <ul>
                     { for users.iter().map(|user| html! {
-                        <li>{ format!("{} - {}", user.name, user.email) }</li>
+                        <li>{ format!("{} - {} - {}", user.imie, user.nazwisko, user.email) }</li>
                     }) }
                 </ul>
             </div>

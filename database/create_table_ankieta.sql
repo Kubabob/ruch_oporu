@@ -14,17 +14,19 @@ CREATE TABLE IF NOT EXISTS survey (
     czy_zgoda_na_wykorzystywanie_fragmentow boolean,
     czy_zgoda_na_regulamin boolean,
     czy_zgoda_na_rodo boolean,
-    czas_dodania timestamp
+    czas_dodania timestamp DEFAULT CURRENT_TIMESTAMP,
 )
 
-CREATE TABLE IF NOT EXISTS survey_with_image (
-    user_id SERIAL PRIMARY KEY,
-    history TEXT,
-    tytul_wpisy VARCHAR(32) DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS ankieta (
+    ankieta_id SERIAL PRIMARY KEY,
+    user_id INT,
+    historia TEXT,
+    tytul_wpisu VARCHAR(32) DEFAULT NULL,
     wybrany_cytat VARCHAR(100) DEFAULT NULL,
     czy_grafika boolean, 
     czy_osoby_trzecie boolean DEFAULT false,
-    nazwa_zgody_na_wizerunek VARCHAR(200) DEFAULT NULL,
+    nazwa_grafiki VARCHAR(50) DEFAULT NULL,
+    nazwa_zgody_na_wizerunek VARCHAR(50) DEFAULT NULL,
     czy_zgoda_na_opublikowanie_grafiki boolean DEFAULT true,
     czy_anonimowo boolean DEFAULT true,
     podpis VARCHAR(100) DEFAULT NULL,
@@ -33,5 +35,9 @@ CREATE TABLE IF NOT EXISTS survey_with_image (
     czy_zgoda_na_wykorzystywanie_fragmentow boolean,
     czy_zgoda_na_regulamin boolean,
     czy_zgoda_na_rodo boolean,
-    czas_dodania timestamp
-)
+    czas_dodania timestamp DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_user_id
+        FOREIGN KEY(user_id)
+            REFERENCES uzytkownik(user_id)
+);
+

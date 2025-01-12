@@ -19,7 +19,7 @@ pub fn survey_counter() -> Html {
                 //let survey_number = survey_number.clone();
                 spawn_local(async move {
                     let client = Client::new();
-                    match client.get("http://127.0.0.1:8080/survey/number")
+                    match client.get("http://127.0.0.1:8080/ankieta/number")
                     .send()
                     .await {
                         Ok(response) => survey_number.set(response.json::<SurveyNumber>().await.unwrap().number),

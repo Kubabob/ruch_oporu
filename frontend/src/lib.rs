@@ -9,3 +9,4 @@ pub mod rules;
 pub mod rodo;
 pub mod survey_counter;
 pub mod survey_file_upload;
+pub mod surveys_viewer;

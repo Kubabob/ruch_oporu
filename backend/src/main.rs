@@ -9,6 +9,7 @@ mod survey;
 mod users;
 mod hello;
 mod upload_file;
+//mod auth;
 
 use survey::{get_survey, get_survey_number, submit_survey, send_survey_file, get_survey_uploads, get_survey_uploads_number};
 use hello::hello_json;
@@ -30,6 +31,10 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .wrap(Cors::permissive())
+            /*.wrap_fn(|req, srv| {
+                let auth_middleware = auth::AuthMiddleware { service: srv };
+                auth_middleware.call(req)
+            })*/
             .app_data(web::Data::new(pool.clone()))
             .service(hello_json)
             .service(create_user)

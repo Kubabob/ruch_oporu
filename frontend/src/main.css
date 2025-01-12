@@ -231,6 +231,7 @@ footer {
     .menu-container input:checked ~ .menu {
       transform: translateX(-100%);
     }
+    
   }
   
   /* desktop styles */
@@ -268,3 +269,15 @@ footer {
       padding: 0 20px;
     }
   }
+
+.dodaj-grafike {
+  display: flex;
+  overflow: hidden;
+  padding: var(--sds-size-space-300);
+  border-radius: var(--sds-size-radius-200);
+  border: var(--sds-size-stroke-border) solid var(--sds-color-border-brand-default);
+  background: var(--sds-color-background-brand-default);
+  justify-content: center;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+}
