@@ -190,28 +190,16 @@ pub fn survey() -> Html {
             let czy_zgoda_na_rodo_value = (*czy_zgoda_na_rodo).clone();
             let submitted = submitted.clone();
 
-            let mut multipart_form = Form::new()
-                .text("ankieta_id", user_id.clone().to_string());
-            
-            if let Some(file_data) = (*grafika).clone() {
-                let part = Part::bytes(file_data)
-                .file_name((*nazwa_grafiki).clone())
-                .mime_str("application/octet-stream").unwrap();
-            
-                multipart_form = multipart_form
-                .text("nazwa_zgody_na_wizerunek", (*nazwa_grafiki).clone())
-                .part("zgoda_na_wizerunek", part);
-            }
+            let user_id_value_multiform = (*user_id).clone();
+            let nazwa_grafiki_value_multiform = (*nazwa_grafiki).clone();
+            let nazwa_grafiki_value_multiform2 = (*nazwa_grafiki).clone();
+            let grafika_value_multiform = (*grafika).clone();
+            let nazwa_zgody_na_wizerunek_multiform = (*nazwa_zgody_na_wizerunek).clone();
+            let nazwa_zgody_na_wizerunek_multiform2 = (*nazwa_zgody_na_wizerunek).clone();
+            let zgoda_na_wizerunek_multiform = (*zgoda_na_wizerunek).clone();
 
-            if let Some(file_data) = (*zgoda_na_wizerunek).clone() {
-                let part = Part::bytes(file_data)
-                .file_name((*nazwa_zgody_na_wizerunek).clone())
-                .mime_str("application/octet-stream").unwrap();
-            
-                multipart_form = multipart_form
-                .text("nazwa_zgody_na_wizerunek", (*nazwa_zgody_na_wizerunek).clone())
-                .part("zgoda_na_wizerunek", part);
-            }       
+
+                   
         
 
             spawn_local(async move {
@@ -235,6 +223,29 @@ pub fn survey() -> Html {
                     czy_zgoda_na_wykorzystywanie_fragmentow: czy_zgoda_na_wykorzystywanie_fragmentow_value,
                     czy_zgoda_na_regulamin: czy_zgoda_na_regulamin_value,
                     czy_zgoda_na_rodo: czy_zgoda_na_rodo_value,
+                };
+
+                let mut multipart_form = Form::new()
+                .text("ankieta_id", user_id_value_multiform.to_string());
+            
+                if let Some(file_data) = grafika_value_multiform {
+                    let part = Part::bytes(file_data)
+                    .file_name(nazwa_grafiki_value_multiform)
+                    .mime_str("application/octet-stream").unwrap();
+                
+                    multipart_form = multipart_form
+                    .text("nazwa_zgody_na_wizerunek", nazwa_grafiki_value_multiform2)
+                    .part("zgoda_na_wizerunek", part);
+                };
+
+                if let Some(file_data) = zgoda_na_wizerunek_multiform {
+                    let part = Part::bytes(file_data)
+                    .file_name(nazwa_zgody_na_wizerunek_multiform)
+                    .mime_str("application/octet-stream").unwrap();
+                
+                    multipart_form = multipart_form
+                    .text("nazwa_zgody_na_wizerunek", nazwa_zgody_na_wizerunek_multiform2)
+                    .part("zgoda_na_wizerunek", part);
                 };
 
                 

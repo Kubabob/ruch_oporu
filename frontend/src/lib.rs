@@ -10,3 +10,7 @@ pub mod rodo;
 pub mod survey_counter;
 pub mod survey_file_upload;
 pub mod surveys_viewer;
+pub mod ankieta;
+pub mod home_gpt;
+pub mod landing_page;
+pub mod landing_page_components;

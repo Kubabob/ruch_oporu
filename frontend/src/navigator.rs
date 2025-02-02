@@ -10,6 +10,8 @@ use crate::description::Description;
 use crate::rules::Rules;
 use crate::rodo::RODO;
 use crate::surveys_viewer::SurveysViewer;
+use crate::ankieta::Ankieta;
+use crate::home_gpt::HomeGPT;
 
 #[derive(Routable, PartialEq, Clone)]
 pub enum Route {
@@ -34,6 +36,12 @@ pub enum Route {
     #[at("/ankiety")]
     SurveysViewer,
 
+    #[at("/ankieta_gpt")]
+    Ankieta,
+
+    #[at("/GPT")]
+    HomeGPT,
+
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -50,21 +58,26 @@ pub fn switch(routes: Route) -> Html {
         Route::NotFound => html! { <NotFound /> },
         Route::RODO => html! { <RODO /> },
         Route::SurveysViewer => html! { <SurveysViewer /> },
+        Route::Ankieta => html! { <Ankieta /> },
+        Route::HomeGPT => html! { <HomeGPT /> }
     }
 }
 
 #[function_component(NavBar)]
 pub fn nav_bar() -> Html {
     html!(
-        <nav class="navbar">
+        <nav class="navbar_org">
             <ul>
                 <li><Link<Route> to={Route::Home}>{"Strona główna"}</Link<Route>></li>
+                <li><Link<Route> to={Route::HomeGPT}>{"Strona główna GPT"}</Link<Route>></li>
                 <li><Link<Route> to={Route::Survey}>{"Wypełnij ankietę"}</Link<Route>></li>
+                <li><Link<Route> to={Route::Ankieta}>{"Wypełnij ankietę GPT"}</Link<Route>></li>
                 <li><Link<Route> to={Route::SurveysViewer}>{"Ankiety"}</Link<Route>></li>
                 <li><Link<Route> to={Route::Users}>{"Użytkownicy"}</Link<Route>></li>
                 <li><Link<Route> to={Route::Description}>{"Opis"}</Link<Route>></li>
                 <li><Link<Route> to={Route::Rules}>{"Zasady"}</Link<Route>></li>
                 <li><Link<Route> to={Route::RODO}>{"RODO"}</Link<Route>></li>
+
             </ul>
         </nav>
     )
