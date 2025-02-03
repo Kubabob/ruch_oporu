@@ -14,3 +14,6 @@ pub mod ankieta;
 pub mod home_gpt;
 pub mod landing_page;
 pub mod landing_page_components;
+pub mod about_us_components;
+pub mod about_us;
+pub mod navigation_bar_components;

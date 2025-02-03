@@ -1,8 +1,16 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
 use web_sys::MouseEvent;
+use yew_router::hooks::use_route;
+
+use crate::landing_page::LandingPage;
+use crate::about_us::AboutUs;
+use crate::navigation_bar_components::routes::Route;
+
 
 #[function_component(NavBar)]
 pub fn nav_bar() -> Html {
+
     let dropdown_visible = use_state(|| false);
     
     let toggle_dropdown = {
@@ -13,6 +21,7 @@ pub fn nav_bar() -> Html {
     };
 
     let toggle_dropdown_closing = toggle_dropdown.clone();
+    
 
     html! {
         <nav class="navbar">
@@ -23,7 +32,10 @@ pub fn nav_bar() -> Html {
             <div class="navbar-items">
                 <button class="nav-button">{ "Wystawa" }</button>
                 <button class="nav-button">{ "Film" }</button>
-                
+                /*
+                <Link<Route> to={Route::Home} classes={get_link_class(Route::Home)}>
+                    { "Home" }
+                </Link<Route>>*/
                 <div class="dropdown-container">
                     <button class="nav-button" onclick={toggle_dropdown}>
                         { "Menu ▾" }
@@ -36,7 +48,10 @@ pub fn nav_bar() -> Html {
                         </button>
 
                         // Menu items
-                        <a href="#profile" class="dropdown-item">{ "O NAS" }</a>
+                        /*<Link<Route> to={Route::AboutUs} classes="nav-link">
+                            { "O NAS" }
+                        </Link<Route>>*/
+                        <a href="o-nas" class="dropdown-item">{ "O NAS" }</a>
                         <a href="#settings" class="dropdown-item">{ "ANONIMOWE COMING OUT'Y" }</a>
                         <a href="#logout" class="dropdown-item">{ "OPOWIEDZ SWOJĄ HISTORIĘ" }</a>
                         <a href="#profile" class="dropdown-item">{ "FAQ" }</a>
