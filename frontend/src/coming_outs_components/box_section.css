@@ -25,7 +25,8 @@
     margin: -1.5rem -1.5rem 1rem -1.5rem;
     border-radius: 12px 12px 0 0;
     overflow: hidden;
-    background: #f8f9fa; /* Add background for images with transparency*/
+    position: relative;
+    background: #f3f4f6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,12 +35,44 @@
 
 .box-image {
     width: auto;
-    height: auto;
+    height: 200px;
     max-width: 100%;
     max-height: 200px;
     object-fit: contain;
-    transition: transform 0.3s ease;
     padding: 1rem; /* Add space around image*/
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #9ca3af;
+    font-family: 'Poppins', sans-serif;
+}
+
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: #f3f4f6;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+.box-image-container {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.box-image.loaded {
+    opacity: 1;
 }
 
 .text-box:hover {
@@ -101,6 +134,22 @@
     font-family: 'Poppins', sans-serif;
     color: #4b5563;
     font-size: 0.9rem;
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.lazy-image:not([src*=".jpg"]) {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+        to right,
+        #f3f4f6 0%,
+        #e5e7eb 50%,
+        #f3f4f6 100%
+    );
+    background-size: 1000px 100%;
 }
 
 @media (max-width: 768px) {
