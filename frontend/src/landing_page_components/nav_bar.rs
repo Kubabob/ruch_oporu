@@ -52,7 +52,7 @@ pub fn nav_bar() -> Html {
                             { "O NAS" }
                         </Link<Route>>*/
                         <a href="o-nas" class="dropdown-item">{ "O NAS" }</a>
-                        <a href="#settings" class="dropdown-item">{ "ANONIMOWE COMING OUT'Y" }</a>
+                        <a href="coming-outs" class="dropdown-item">{ "ANONIMOWE COMING OUT'Y" }</a>
                         <a href="#logout" class="dropdown-item">{ "OPOWIEDZ SWOJĄ HISTORIĘ" }</a>
                         <a href="#profile" class="dropdown-item">{ "FAQ" }</a>
                         <a href="#profile" class="dropdown-item">{ "WYSTAWA" }</a>
