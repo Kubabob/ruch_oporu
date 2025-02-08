@@ -1,1 +1,1 @@
-pub mod text_section;
+pub mod about_us_text_section;

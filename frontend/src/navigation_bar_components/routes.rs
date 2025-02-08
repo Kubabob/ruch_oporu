@@ -3,6 +3,7 @@ use yew_router::prelude::*;
 use crate::landing_page::LandingPage;
 use crate::about_us::AboutUs;
 use crate::coming_outs::ComingOuts;
+use crate::faq::FAQ;
 
 #[derive(Routable, PartialEq, Clone)]
 pub enum Route {
@@ -14,6 +15,9 @@ pub enum Route {
 
     #[at("/coming-outs")]
     ComingOuts,
+
+    #[at("/faq")]
+    FAQ,
     
     #[not_found]
     #[at("/404")]
@@ -25,6 +29,7 @@ pub fn switch(routes: Route) -> Html {
         Route::Home => html! { <LandingPage /> },
         Route::AboutUs => html! { <AboutUs /> },
         Route::ComingOuts => html! { <ComingOuts /> },
+        Route::FAQ => html! { <FAQ /> },
         Route::NotFound => html! { "404 Not Found" },
     }
 }

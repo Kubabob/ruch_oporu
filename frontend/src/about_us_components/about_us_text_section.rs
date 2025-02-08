@@ -1,7 +1,7 @@
 use yew::prelude::*;
 
-#[function_component(TextSection)]
-pub fn text_section() -> Html {
+#[function_component(AboutUsTextSection)]
+pub fn about_us_text_section() -> Html {
     html! {
         <section class="about-section">
             <div class="about-content">

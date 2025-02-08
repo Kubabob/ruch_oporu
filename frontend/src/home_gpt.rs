@@ -1,8 +1,5 @@
 use yew::prelude::*;
 
-use crate::navigator::NavBar;
-use crate::survey_counter::SurveyCounter;
-
 
 #[function_component(HomeGPT)]
 pub fn home_gpt() -> Html {

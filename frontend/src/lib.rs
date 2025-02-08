@@ -19,3 +19,5 @@ pub mod about_us;
 pub mod navigation_bar_components;
 pub mod coming_outs_components;
 pub mod coming_outs;
+pub mod faq_components;
+pub mod faq;

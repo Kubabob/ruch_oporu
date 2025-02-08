@@ -1,6 +1,6 @@
 use yew::prelude::*;
-use web_sys::{window, IntersectionObserver, IntersectionObserverEntry, IntersectionObserverInit};
-use gloo::utils::document;
+use web_sys::{IntersectionObserver, IntersectionObserverEntry, IntersectionObserverInit};
+//use gloo::utils::document;
 use wasm_bindgen::{prelude::*, JsCast};
 use gloo_utils::format::JsValueSerdeExt;
 
@@ -25,7 +25,7 @@ pub fn hero() -> Html {
                 }
             );
 
-            let mut options = IntersectionObserverInit::new();
+            let options = IntersectionObserverInit::new();
             options.set_threshold(&JsValue::from_serde(&[0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]).unwrap());
             
             let observer = IntersectionObserver::new_with_options(

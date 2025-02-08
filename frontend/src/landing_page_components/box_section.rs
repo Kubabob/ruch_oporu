@@ -1,4 +1,4 @@
-use log::{info, warn, error};
+//use log::{info, warn, error};
 use yew::prelude::*;
 
 #[function_component(BoxSection)]

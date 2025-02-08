@@ -1,16 +1,4 @@
 use yew::prelude::*;
-use serde::{Deserialize, Serialize};
-use reqwest::Client;
-use reqwest::multipart::{Form, Part};
-use wasm_bindgen_futures::spawn_local;
-use yew_router::prelude::*;
-use web_sys::{HtmlInputElement, FileReader};
-use wasm_bindgen::closure::Closure;
-use wasm_bindgen::JsCast;
-
-use chrono::NaiveDateTime;
-
-use crate::navigator::Route;
 
 #[function_component(Ankieta)]
 pub fn ankieta() -> Html {

@@ -1,11 +1,5 @@
 use yew::prelude::*;
-use yew_router::prelude::*;
 use web_sys::MouseEvent;
-use yew_router::hooks::use_route;
-
-use crate::landing_page::LandingPage;
-use crate::about_us::AboutUs;
-use crate::navigation_bar_components::routes::Route;
 
 
 #[function_component(NavBar)]
@@ -51,10 +45,10 @@ pub fn nav_bar() -> Html {
                         /*<Link<Route> to={Route::AboutUs} classes="nav-link">
                             { "O NAS" }
                         </Link<Route>>*/
-                        <a href="o-nas" class="dropdown-item">{ "O NAS" }</a>
-                        <a href="coming-outs" class="dropdown-item">{ "ANONIMOWE COMING OUT'Y" }</a>
+                        <a href="#/o-nas" class="dropdown-item">{ "O NAS" }</a>
+                        <a href="#/coming-outs" class="dropdown-item">{ "ANONIMOWE COMING OUT'Y" }</a>
                         <a href="#logout" class="dropdown-item">{ "OPOWIEDZ SWOJĄ HISTORIĘ" }</a>
-                        <a href="#profile" class="dropdown-item">{ "FAQ" }</a>
+                        <a href="#/faq" class="dropdown-item">{ "FAQ" }</a>
                         <a href="#profile" class="dropdown-item">{ "WYSTAWA" }</a>
                         <a href="#profile" class="dropdown-item">{ "FILM" }</a>
                         <a href="#profile" class="dropdown-item">{ "INNE ORGANIZACJE" }</a>
