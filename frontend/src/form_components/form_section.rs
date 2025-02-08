@@ -35,13 +35,16 @@ pub fn form_section() -> Html {
     let is_public_image = use_state(|| false);
 
     // Czy chcesz pozostać anonimowy?
-    let is_anonymous = use_state(|| false);
+    let is_nonanonymous = use_state(|| false);
 
     // podpis
     let signature = use_state(|| String::new());
 
     // Czy to jest autentyczny wpis?
     let is_authentic = use_state(|| false);
+
+    // Wyrazam zgode na upublicznienie wpisu
+    let is_public = use_state(|| false);
 
     // Czy zgadasz sie na wykorzystywanie fragmentów?
     let usage_consent = use_state(|| false);
@@ -152,10 +155,10 @@ pub fn form_section() -> Html {
 
     // Czy chcesz pozostać anonimowy? on change
     let on_is_anonymous_change = {
-        let is_anonymous = is_anonymous.clone();
+        let is_nonanonymous = is_nonanonymous.clone();
         Callback::from(move |e: InputEvent| {
             let input = e.target_unchecked_into::<HtmlInputElement>();
-            is_anonymous.set(input.checked());
+            is_nonanonymous.set(input.checked());
         })
     };
 
@@ -176,6 +179,16 @@ pub fn form_section() -> Html {
             is_authentic.set(input.checked());
         })
     };
+
+    // Wyrazam zgode na upublicznienie wpisu on change
+    let on_is_public_change = {
+        let is_public = is_public.clone();
+        Callback::from(move |e: InputEvent| {
+            let input = e.target_unchecked_into::<HtmlInputElement>();
+            is_public.set(input.checked());
+        })
+    };
+
 
     // Czy zgadasz sie na wykorzystywanie fragmentów? on change
     let on_usage_consent_change = {
@@ -218,9 +231,10 @@ pub fn form_section() -> Html {
         let is_another = is_another.clone();
         let image_consent = image_consent.clone();
         let is_public_image = is_public_image.clone();
-        let is_anonymous = is_anonymous.clone();
+        let is_nonanonymous = is_nonanonymous.clone();
         let signature = signature.clone();
         let is_authentic = is_authentic.clone();
+        let is_public = is_public.clone();
         let usage_consent = usage_consent.clone();
         let rules_consent = rules_consent.clone();
         let rodo_consent = rodo_consent.clone();
@@ -258,9 +272,10 @@ pub fn form_section() -> Html {
                 log::info!("No image_consent file provided");
             };
             log::info!("is_public_image: {}", *is_public_image);
-            log::info!("is_anonymous: {}", *is_anonymous);
+            log::info!("is_nonanonymous: {}", *is_nonanonymous);
             log::info!("signature: {}", *signature);
             log::info!("is_authentic: {}", *is_authentic);
+            log::info!("is_public: {}", *is_public);
             log::info!("usage_consent: {}", *usage_consent);
             log::info!("rules_consent: {}", *rules_consent);
             log::info!("rodo_consent: {}", *rodo_consent);
@@ -277,9 +292,10 @@ pub fn form_section() -> Html {
             is_another.set(false);
             image_consent.set(None);
             is_public_image.set(false);
-            is_anonymous.set(false);
+            is_nonanonymous.set(false);
             signature.set(String::new());
             is_authentic.set(false);
+            is_public.set(false);
             usage_consent.set(false);
             rules_consent.set(false);
             rodo_consent.set(false);
@@ -302,6 +318,7 @@ pub fn form_section() -> Html {
             } else {
                 <>
                     <h1>{"Opowiedz swoją historię"}</h1>
+                    <h5>{"*obowiązkowe"}</h5>
                     // Pokaz error jesli wpis jest nieautentyczny
                     if let Some(error_message) = &*error_message {
                         <div class="error-message">
@@ -355,10 +372,10 @@ pub fn form_section() -> Html {
                         // Historia uzytkownika
 
                         <div class="form-group">
-                            <label for="history">{"Twoja history:"}</label>
+                            <label for="history">{"Twoja historia:*"}</label>
                             <textarea
                                 id="history"
-                                placeholder="Twoja history"
+                                placeholder="Tutaj napisz swoją historię..."
                                 value={(*history).clone()}
                                 oninput={on_history_change}
                                 rows="4"
@@ -373,21 +390,21 @@ pub fn form_section() -> Html {
                             <input
                                 type="text"
                                 id="title"
-                                placeholder="Tytuł wpisu"
+                                placeholder="O czym opowiada Twoja historia w jednym zdaniu lub słowie?"
                                 value={(*title).clone()}
                                 oninput={on_title_change}
-                                required=true
+                                //required=true
                             />
                         </div>
 
 
                         // Cytat który chciałbyś umieścić
                         <div class="form-group">
-                            <label for="quote">{"Cytat który chciałbyś umieścić:"}</label>
+                            <label for="quote">{"Wybrany cytat/krótki fragment, który będzie wyszczególniony na stronie:"}</label>
                             <input
                                 type="text"
                                 id="quote"
-                                placeholder="Cytat"
+                                placeholder="Który fragment uważasz za najważniejszy?"
                                 oninput={on_quote_change}
                                 //required=true
                             />
@@ -396,7 +413,7 @@ pub fn form_section() -> Html {
 
                         // Czy chcesz umieścić grafikę?
                         <div class="form-group">
-                            <label for="czy_grafika">{"Czy chcesz umieścic grafikę?"}</label>
+                            <label for="czy_grafika">{"Czy chcesz dodać grafikę lub zdjęcie do Twojej historii?"}</label>
                             <input
                                 type="checkbox"
                                 id="czy_grafika"
@@ -420,7 +437,7 @@ pub fn form_section() -> Html {
 
                             // Czy znajduja się osoby trzecie na grafice?
                             <div class="form-group">
-                                <label for="is_another">{"Czy na grafice znajdują się osoby trzecie?"}</label>
+                                <label for="is_another">{"Czy na Twoim zdjęciu znajdują się osoby trzecie?"}</label>
                                 <input
                                     type="checkbox"
                                     id="is_another"
@@ -432,7 +449,10 @@ pub fn form_section() -> Html {
                             if *is_another {
                                 // Dodaj zgode na wizerunek
                                 <div class="form-group">
-                                    <label for="image_consent">{"Dodaj zgodę na udostępnienie wizerunku:"}</label>
+                                    <label for="image_consent">
+                                    {"Dodaj zgodę na udostępnienie wizerunku:\n"}
+                                    <a href={env::IMAGE_CONSENT_URL} target="_blank">{"zgoda do pobrania"}</a>
+                                    </label>
                                     <input
                                         type="file"
                                         id="image_consent"
@@ -444,7 +464,7 @@ pub fn form_section() -> Html {
 
                             // Czy zezwalasz na opublikowanie grafiki?
                             <div class="form-group">
-                                <label for="is_public_image">{"Czy zezwalasz na opublikowanie grafiki?"}</label>
+                                <label for="is_public_image">{"Wyrażam zgodę na opublikowanie zdjęcia/grafiki na stronie."}</label>
                                 <input
                                     type="checkbox"
                                     id="is_public_image"
@@ -456,23 +476,23 @@ pub fn form_section() -> Html {
 
                         // Czy chcesz pozostać anonimowy?
                         <div class="form-group">
-                            <label for="is_anonymous">{"Czy chcesz pozostać anonimowy?"}</label>
+                            <label for="is_nonanonymous">{"Czy chcesz podpisać się imieniem i nazwiskiem?"}</label>
                             <input
                                 type="checkbox"
                                 id="is_anoymous"
-                                checked={*is_anonymous}
+                                checked={*is_nonanonymous}
                                 oninput={on_is_anonymous_change}
                             />
                         </div>
 
-                        if !*is_anonymous {
+                        if *is_nonanonymous {
                             // podpis
                             <div class="form-group">
-                                <label for="signature">{"Twój podpis:"}</label>
+                                <label for="signature">{"Podpis:"}</label>
                                 <input
                                     type="text"
                                     id="signature"
-                                    placeholder="Twój podpis"
+                                    placeholder="Imię i nazwisko"
                                     value={(*signature).clone()}
                                     oninput={on_signature_change}
                                     required=true
@@ -482,7 +502,7 @@ pub fn form_section() -> Html {
 
                         // Czy to jest autentyczny wpis?
                         <div class="form-group">
-                            <label for="is_authentic">{"Czy to jest autentyczny wpis?"}</label>
+                            <label for="is_authentic">{"Potwierdzam, że wpis opisuje moje osobiste doświadczenie jako osoba nieheteronormatywna lub wspierająca. Moja wypowiedź nie zawiera mowy nienawiści"}</label>
                             <input
                                 type="checkbox"
                                 id="is_authentic"
@@ -491,9 +511,24 @@ pub fn form_section() -> Html {
                             />
                         </div>
 
+                        // Zgoda na upublicznienie wpisu
+                        <div class="form-group">
+                            <label for="is_public">
+                                {"Wyrażam zgodę na upublicznienie mojego wpisu na stronie "}
+                                <a href={env::DOMAIN} target="_blank">{"www.granaorientacje.pl"}</a>
+                            </label>
+                            <input
+                                type="checkbox"
+                                id="is_public"
+                                checked={*is_public}
+                                oninput={on_is_public_change}
+                                //required=true
+                            />
+                        </div>
+
                         // Czy zgadasz sie na wykorzystywanie fragmentów?
                         <div class="form-group">
-                            <label for="usage_consent">{"Czy zgadzasz się na wykorzystanie fragmentów?"}</label>
+                            <label for="usage_consent">{"Wyrażam zgodę na wykorzystywanie fragmentów tekstów do promocji projektu w mediach społecznościowych."}</label>
                             <input
                                 type="checkbox"
                                 id="usage_consent"
@@ -505,9 +540,8 @@ pub fn form_section() -> Html {
                         // Zgoda na regulamin
                         <div class="form-group">
                             <label for="rules_consent">
-                                {"Czy zgadzasz się na "}
+                                {"Zgadzam się z regulaminem projektu dostępnym na stronie: "}
                                 <a href={env::RULES_URL} target="_blank">{"regulamin"}</a>
-                                {"?"}
                             </label>
                             <input
                                 type="checkbox"
@@ -521,10 +555,8 @@ pub fn form_section() -> Html {
                         // Zgoda na RODO
                         <div class="form-group">
                             <label for="rodo_consent">
-                                {"Czy zgadzasz się na "}
-                                //<a href={format!("{}/{}", std::env::var("BASE_URL").unwrap_or_default(), std::env::var("RODO_URL").unwrap_or_default())} target="_blank">{"RODO"}</a>
+                                {"Wyrażam zgodę na przetwarzanie danych osobowych "}
                                 <a href={env::RODO_URL} target="_blank">{"RODO"}</a>
-                                {"?"}
                             </label>
                             <input
                                 type="checkbox"
