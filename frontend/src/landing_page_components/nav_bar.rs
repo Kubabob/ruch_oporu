@@ -24,34 +24,31 @@ pub fn nav_bar() -> Html {
             </div>
 
             <div class="navbar-items">
-                <button class="nav-button">{ "Wystawa" }</button>
-                <button class="nav-button">{ "Film" }</button>
+                <a href="#/wystawa" class="nav-button">{ "Wystawa" }</a>
+                <a href="#/film" class="nav-button">{ "Film" }</a>
                 /*
                 <Link<Route> to={Route::Home} classes={get_link_class(Route::Home)}>
                     { "Home" }
                 </Link<Route>>*/
                 <div class="dropdown-container">
-                    <button class="nav-button" onclick={toggle_dropdown}>
+                    <a class="nav-button" onclick={toggle_dropdown}>
                         { "Menu ▾" }
-                    </button>
+                    </a>
                     
                     <div class={classes!("dropdown-content", (*dropdown_visible).then_some("active"))}>
                         // Add the close button here
-                        <button class="close-button" onclick={toggle_dropdown_closing}>
+                        <a class="close-button" onclick={toggle_dropdown_closing}>
                             { "←" } // Left arrow symbol
-                        </button>
+                        </a>
 
                         // Menu items
-                        /*<Link<Route> to={Route::AboutUs} classes="nav-link">
-                            { "O NAS" }
-                        </Link<Route>>*/
                         <a href="#/o-nas" class="dropdown-item">{ "O NAS" }</a>
                         <a href="#/coming-outs" class="dropdown-item">{ "ANONIMOWE COMING OUT'Y" }</a>
                         <a href="#/formularz" class="dropdown-item">{ "OPOWIEDZ SWOJĄ HISTORIĘ" }</a>
                         <a href="#/faq" class="dropdown-item">{ "FAQ" }</a>
-                        <a href="#profile" class="dropdown-item">{ "WYSTAWA" }</a>
-                        <a href="#profile" class="dropdown-item">{ "FILM" }</a>
-                        <a href="#profile" class="dropdown-item">{ "INNE ORGANIZACJE" }</a>
+                        <a href="#/wystawa" class="dropdown-item">{ "WYSTAWA" }</a>
+                        <a href="#/film" class="dropdown-item">{ "FILM" }</a>
+                        <a href="#/inne-organizacje" class="dropdown-item">{ "INNE ORGANIZACJE" }</a>
                         <a href="#/kontakt" class="dropdown-item">{ "KONTAKT" }</a>
                         <a href="https://www.instagram.com/your_instagram_page"
                             class="dropdown-item instagram-button"
