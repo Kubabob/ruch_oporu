@@ -1,12 +1,14 @@
 use yew::prelude::*;
 use web_sys::{File, HtmlInputElement, HtmlTextAreaElement};
+use super::status_selector::StatusSelector;
+use super::questions_section::{QuestionsSection, Status};
 use crate::env;
 
 #[function_component(FormSection)]
 pub fn form_section() -> Html {
 
     // LGBT/Ally/Innx
-    let status = use_state(|| String::new());
+    let status = use_state(|| Status::LGBT);
 
     // Historia uzytkownika
     let history = use_state(|| String::new());
@@ -62,9 +64,9 @@ pub fn form_section() -> Html {
     // LGBT/Ally/Innx on change
     let on_status_change = {
         let status = status.clone();
-        Callback::from(move |e: InputEvent| {
-            let input = e.target_unchecked_into::<HtmlInputElement>();
-            status.set(input.value());
+        Callback::from(move |new_status: Status| {
+            //let input = e.target_unchecked_into::<HtmlInputElement>();
+            status.set(new_status);
         })
     };
 
@@ -203,8 +205,8 @@ pub fn form_section() -> Html {
     };
     
 
-    let on_status_change_clone1 = on_status_change.clone();
-    let on_status_change_clone2 = on_status_change.clone();
+    // let on_status_change_clone1 = on_status_change.clone();
+    // let on_status_change_clone2 = on_status_change.clone();
 
     let on_submit = {
         let status = status.clone();
@@ -239,7 +241,7 @@ pub fn form_section() -> Html {
             error_message.set(None);
 
             log::info!("Form submitted!");
-            log::info!("status: {}", *status);
+            log::info!("status: {:?}", *status);
             log::info!("history: {}", *history);
             log::info!("title: {}", *title);
             log::info!("quote: {}", *quote);
@@ -265,7 +267,8 @@ pub fn form_section() -> Html {
 
 
             // Clear form
-            status.set(String::new());
+            // status.set(String::new());
+            status.set(Status::LGBT);
             history.set(String::new());
             title.set(String::new());
             quote.set(String::new());
@@ -287,6 +290,8 @@ pub fn form_section() -> Html {
     html! {
         <div class="form-page">
         // Dodać pytania pomocnicze
+        <QuestionsSection status={(*status).clone()} />
+            
 
             // Podziekowanie za wypelnienie formularza
             if *form_submitted {
@@ -305,41 +310,45 @@ pub fn form_section() -> Html {
                     }
                     <form onsubmit={on_submit}>
                         // Wybór LGBT/Ally/Innx
-                        <div class="form-group">
-                            <label>{"Kim jesteś?:"}</label>
-                            <div class="radio-group">
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="option"
-                                        value="LGBT"
-                                        checked={*status == "LGBT"}
-                                        oninput={on_status_change}
-                                    />
-                                    {"LGBT"}
-                                </label>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="option"
-                                        value="Ally"
-                                        checked={*status == "Ally"}
-                                        oninput={on_status_change_clone1}
-                                    />
-                                    {"Ally"}
-                                </label>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="option"
-                                        value="Innx"
-                                        checked={*status == "Innx"}
-                                        oninput={on_status_change_clone2}
-                                    />
-                                    {"Innx"}
-                                </label>
-                            </div>
-                        </div>
+                        // <div class="form-group">
+                        //     <label>{"Kim jesteś?:"}</label>
+                        //     <div class="radio-group">
+                        //         <label>
+                        //             <input
+                        //                 type="radio"
+                        //                 name="option"
+                        //                 value="LGBT"
+                        //                 checked={*status == "LGBT"}
+                        //                 oninput={on_status_change}
+                        //             />
+                        //             {"LGBT"}
+                        //         </label>
+                        //         <label>
+                        //             <input
+                        //                 type="radio"
+                        //                 name="option"
+                        //                 value="Ally"
+                        //                 checked={*status == "Ally"}
+                        //                 oninput={on_status_change_clone1}
+                        //             />
+                        //             {"Ally"}
+                        //         </label>
+                        //         <label>
+                        //             <input
+                        //                 type="radio"
+                        //                 name="option"
+                        //                 value="Innx"
+                        //                 checked={*status == "Innx"}
+                        //                 oninput={on_status_change_clone2}
+                        //             />
+                        //             {"Innx"}
+                        //         </label>
+                        //     </div>
+                        // </div>
+                        <StatusSelector 
+                            current_status={(*status).clone()} 
+                            on_status_change={on_status_change} 
+                        />
 
 
 
