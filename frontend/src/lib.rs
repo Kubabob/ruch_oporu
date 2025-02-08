@@ -24,3 +24,5 @@ pub mod faq;
 pub mod form_components;
 pub mod form;
 pub mod env;
+pub mod contact;
+pub mod contact_components;

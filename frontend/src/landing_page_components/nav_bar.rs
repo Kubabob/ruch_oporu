@@ -52,7 +52,7 @@ pub fn nav_bar() -> Html {
                         <a href="#profile" class="dropdown-item">{ "WYSTAWA" }</a>
                         <a href="#profile" class="dropdown-item">{ "FILM" }</a>
                         <a href="#profile" class="dropdown-item">{ "INNE ORGANIZACJE" }</a>
-                        <a href="#profile" class="dropdown-item">{ "KONTAKT" }</a>
+                        <a href="#/kontakt" class="dropdown-item">{ "KONTAKT" }</a>
                         <a href="https://www.instagram.com/your_instagram_page"
                             class="dropdown-item instagram-button"
                             target="_blank"
