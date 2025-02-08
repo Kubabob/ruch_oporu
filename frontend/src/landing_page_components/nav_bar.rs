@@ -20,7 +20,7 @@ pub fn nav_bar() -> Html {
     html! {
         <nav class="navbar">
             <div class="navbar-logo">
-                <a href="/">{ "Logo" }</a>
+                <a href="/ruch_oporu/">{ "Logo" }</a>
             </div>
 
             <div class="navbar-items">
