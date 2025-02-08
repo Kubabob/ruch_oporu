@@ -1,0 +1,114 @@
+.patrons-section {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+
+/* in case i want to change the background color
+.patrons-section {
+    background-color: #a8e6cf;
+    color: white;
+    padding: 2rem;
+}*/
+
+/* Ensure all text and links appear white */
+/*
+.patrons-section .section-title,
+.patrons-section .section-subtitle,
+.patrons-section a,
+.patrons-section .join-text {
+    color: white;
+}*/
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #4b5563;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding: 1rem;
+}
+
+.logo-placeholder {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.logo-placeholder:hover {
+    transform: translateY(-5px);
+}
+
+.animated-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px dashed #e5e7eb;
+    border-radius: 8px;
+    animation: pulseBorder 2s infinite;
+}
+
+@keyframes pulseBorder {
+    0% { border-color: #e5e7eb; }
+    50% { border-color: #2563eb; }
+    100% { border-color: #e5e7eb; }
+}
+
+.join-text {
+    font-family: 'Poppins', sans-serif;
+    color: #2563eb;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #1e40af;
+}
+
+@media (max-width: 768px) {
+    .logos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
