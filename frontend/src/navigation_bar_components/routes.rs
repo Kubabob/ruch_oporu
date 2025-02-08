@@ -4,6 +4,7 @@ use crate::landing_page::LandingPage;
 use crate::about_us::AboutUs;
 use crate::coming_outs::ComingOuts;
 use crate::faq::FAQ;
+use crate::form::FormPage;
 
 #[derive(Routable, PartialEq, Clone)]
 pub enum Route {
@@ -18,6 +19,9 @@ pub enum Route {
 
     #[at("/faq")]
     FAQ,
+
+    #[at("/formularz")]
+    FormPage,
     
     #[not_found]
     #[at("/404")]
@@ -30,6 +34,7 @@ pub fn switch(routes: Route) -> Html {
         Route::AboutUs => html! { <AboutUs /> },
         Route::ComingOuts => html! { <ComingOuts /> },
         Route::FAQ => html! { <FAQ /> },
+        Route::FormPage => html! { <FormPage /> },
         Route::NotFound => html! { "404 Not Found" },
     }
 }
