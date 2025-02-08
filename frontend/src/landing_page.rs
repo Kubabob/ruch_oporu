@@ -8,16 +8,10 @@ use crate::landing_page_components::patrons::Patrons;
 pub fn landing_page() -> Html {
     html! {
         <>
-            /*<BrowserRouter>
-                //<NavBar />
-                //<main>
-                <Switch<Route> render={switch} />
-                //</main>
-            </BrowserRouter>*/
             <Hero />
             <BoxSection />
             <Patrons />            
-            // Your page content here
+
         </>
     }
 }

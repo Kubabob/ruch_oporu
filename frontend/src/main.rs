@@ -13,11 +13,7 @@ fn app() -> Html {
             <NavBar />
             <HashRouter>
                 <Switch<Route> render={switch} />
-            </HashRouter>
-            
-
-            //<LandingPage />
-            
+            </HashRouter>        
         </>
     }
 }
