@@ -1,0 +1,12 @@
+.submission-count {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #c23030;
+}
+
+.submission-count .error {
+    color: red;
+    font-weight: bold;
+}
