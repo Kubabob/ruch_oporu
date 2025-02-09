@@ -1,54 +1,39 @@
-use actix_web::{web, App, HttpServer};
-use sqlx::{postgres::PgPoolOptions, PgPool};
+// src/main.rs
+use actix_web::{App, HttpServer};
+use backend::handlers;
+use dotenv;
 use std::env;
-//use actix_web::http::header::{HeaderName, HeaderValue};
-//use actix_web::middleware::DefaultHeaders;
 use actix_cors::Cors;
-
-mod survey;
-mod users;
-mod hello;
-mod upload_file;
-//mod auth;
-
-use survey::{get_survey, get_survey_number, submit_survey, send_survey_file, get_survey_uploads, get_survey_uploads_number};
-use hello::hello_json;
-use users::{create_user, delete_user, get_users, update_user};
+use actix_web::http::header;
+use actix_web::middleware::Logger;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    dotenv::dotenv().ok();
+    env_logger::init_from_env(env_logger::Env::new().default_filter_or("info"));
+    dotenv::from_path(".env").expect("Failed to load .env file");
 
-    let database_url = env::var("DATABASE_URL").expect("DATABASE_URL nie ustawiony!");
-    let pool: PgPool = PgPoolOptions::new()
-        .max_connections(5)
-        .connect(&database_url)
-        .await
-        .expect("Nie można połączyć się z bazą danych");
+    let backend_url = env::var("BACKEND_URL").expect("BACKEND_URL must be set");
 
-    println!("Serwer wystartował na http://localhost:8080");
-
-    HttpServer::new(move || {
+    HttpServer::new(|| {
+        let cors = Cors::default()
+            // .allowed_origin(&env::var("FRONTEND_URL").expect("FRONTEND_URL must be set")) // Your frontend origin
+            .allow_any_origin()
+            .allowed_methods(vec!["GET", "POST", "OPTIONS"])
+            .allowed_headers(vec![header::CONTENT_TYPE])
+            .supports_credentials()
+            .max_age(3600);
+        
         App::new()
-            .wrap(Cors::permissive())
-            /*.wrap_fn(|req, srv| {
-                let auth_middleware = auth::AuthMiddleware { service: srv };
-                auth_middleware.call(req)
-            })*/
-            .app_data(web::Data::new(pool.clone()))
-            .service(hello_json)
-            .service(create_user)
-            .service(get_users)
-            .service(update_user)
-            .service(delete_user)
-            .service(submit_survey)
-            .service(get_survey)
-            .service(get_survey_number)
-            .service(send_survey_file)
-            .service(get_survey_uploads)
-            .service(get_survey_uploads_number)
+            .wrap(Logger::default())
+            .wrap(cors)
+            .service(handlers::form_submission::submit_form)
+            .service(handlers::queries::get_total_submissions)
+            .service(handlers::queries::get_submissions_by_status)
+            .service(handlers::queries::get_submissions_with_status)
+            .service(handlers::queries::get_submissions_count_with_status)
+            .service(handlers::queries::get_submission_by_id)
     })
-    .bind("127.0.0.1:8080")?
+    .bind(backend_url)?
     .run()
     .await
 }

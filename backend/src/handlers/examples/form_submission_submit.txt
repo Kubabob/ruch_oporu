@@ -1,0 +1,14 @@
+curl -X POST -H "Content-Type: application/json" -d '{
+    "status": "Ally",
+    "history": "My support story...",
+    "is_graphic": false,
+    "is_another": false,
+    "is_public_image": true,
+    "is_nonanonymous": true,
+    "signature": "John Doe",
+    "is_authentic": true,
+    "is_public": true,
+    "usage_consent": true,
+    "rules_consent": true,
+    "rodo_consent": true
+}' http://localhost:8000/submit

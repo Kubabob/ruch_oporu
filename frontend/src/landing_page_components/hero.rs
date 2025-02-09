@@ -3,7 +3,7 @@ use web_sys::{IntersectionObserver, IntersectionObserverEntry, IntersectionObser
 //use gloo::utils::document;
 use wasm_bindgen::{prelude::*, JsCast};
 use gloo_utils::format::JsValueSerdeExt;
-
+use super::submissions_count::SubmissionCount;
 #[function_component(Hero)]
 pub fn hero() -> Html {
     let opacity = use_state(|| 1.0);
@@ -52,12 +52,16 @@ pub fn hero() -> Html {
                 
                 <div class="stats-container">
                     <div class="stat-item">
-                        <div class="stat-number">{"1542"}</div>
-                        <div class="stat-label">{"ally"}</div>
+                        <div class="stat-number">
+                            <SubmissionCount user_status="Ally" />
+                        </div>
+                        <div class="stat-label">{"Ally"}</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">{"893"}</div>
-                        <div class="stat-label">{"lgbtq"}</div>
+                        <div class="stat-number">
+                            <SubmissionCount user_status="LGBT" />    
+                        </div>
+                        <div class="stat-label">{"LGBT"}</div>
                     </div>
                 </div>
             </div>    
