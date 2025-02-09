@@ -54,7 +54,7 @@ pub fn nav_bar() -> Html {
                             class="dropdown-item instagram-button"
                             target="_blank"
                             rel="noopener noreferrer">
-                                <img src="/img/Instagram_simple_icon.svg.png"
+                                <img src="img/Instagram_simple_icon.svg.png"
                                     alt="Instagram"
                                     class="instagram-icon" />
                         </a>

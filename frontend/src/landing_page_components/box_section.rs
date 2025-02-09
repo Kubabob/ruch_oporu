@@ -59,7 +59,7 @@ pub fn box_section() -> Html {
                 // Small Box 2
                 <div class="box box-small">
                     <div class="box-content">
-                        <img src="image1.jpg" alt="Zdjęcie 1" class="box-image" />
+                        <img src="img/article3.jpg" alt="Zdjęcie 1" class="box-image" />
                         <h3>{"Tytuł 1"}</h3>
                         <p>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}</p>
                         <a href="#" class="read-more">{"Czytaj więcej"}</a>
