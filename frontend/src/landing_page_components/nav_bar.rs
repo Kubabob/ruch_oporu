@@ -1,5 +1,7 @@
 use yew::prelude::*;
 use web_sys::MouseEvent;
+use wasm_bindgen::closure::Closure;
+use wasm_bindgen::JsCast;
 
 
 #[function_component(NavBar)]
@@ -15,6 +17,47 @@ pub fn nav_bar() -> Html {
     };
 
     let toggle_dropdown_closing = toggle_dropdown.clone();
+
+    // Close dropdown when clicking outside
+    {
+        let dropdown_visible = dropdown_visible.clone();
+        use_effect_with((), move |_| {
+            let dropdown_visible = dropdown_visible.clone();
+
+            // Attach a click event listener to the document
+            let document = web_sys::window().unwrap().document().unwrap();
+            let document_clone = document.clone();
+            let closure = Closure::<dyn Fn(MouseEvent)>::new(move |e: MouseEvent| {
+                if let Some(target) = e.target() {
+                    let dropdown_element = document_clone
+                        .query_selector(".dropdown-container")
+                        .unwrap();
+
+                    // Check if the click is outside the dropdown
+                    if let Some(dropdown_element) = dropdown_element {
+                        if let Some(target_element) = target
+                            .dyn_into::<web_sys::Node>()
+                            .ok()
+                            .and_then(|node| Some(node))
+                        {
+                            if !dropdown_element.contains(Some(&target_element)) {
+                                dropdown_visible.set(false);
+                            }
+                        }
+                    }
+                }
+            });
+
+            document
+                .add_event_listener_with_callback("click", closure.as_ref().unchecked_ref())
+                .unwrap();
+            // Cleanup the event listener
+            move || {
+                document.remove_event_listener_with_callback("click", closure.as_ref().unchecked_ref()).unwrap();
+                closure.forget(); // Prevent memory leaks
+            }
+        });
+    }
     
 
     html! {

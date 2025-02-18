@@ -146,12 +146,14 @@
     font-weight: 900;
     font-size: 4rem;
     text-transform: uppercase;
+    margin-bottom: 200px;
 }
 
 .right-part {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     text-transform: uppercase;
+    margin-bottom: 200px;
 }
 
 .left-text {
@@ -249,7 +251,7 @@
 
 .stats-container {
     position: absolute;
-    bottom: 2rem;
+    bottom: 5rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -286,10 +288,13 @@
 
     .left-part {
         font-size: 3rem;
+        
     }
     
     .right-part {
         font-size: 2rem;
+        margin-top: -200px;
+        margin-bottom: 250px;
     }
     
     .na-orientacje {
@@ -299,19 +304,20 @@
     .stats-container {
         flex-direction: row;
         gap: 1rem;
-        width: 90%;
+        width: 80%;
         text-align: center;
+        margin-bottom: 100px;
     }
     
     .stat-number {
         font-size: 2rem;
-        padding-left: 100%;
+        padding-right: 0px;
         text-align: center;
     }
 
     .stat-label {
         font-size: 1rem;
-        padding-left: 100%;
+        padding-right: 90px;
         text-align: center;
     }
 

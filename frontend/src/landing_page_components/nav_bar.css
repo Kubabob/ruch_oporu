@@ -119,7 +119,7 @@
 }
 
 .dropdown-content.active {
-    transform: translateX(-130%);
+    transform: translateX(-82%);
 }
 
 /* Backdrop for mobile-friendly overlay */
