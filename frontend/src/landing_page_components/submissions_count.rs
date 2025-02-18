@@ -30,7 +30,7 @@ pub fn submission_count(props: &SubmissionsCountProps) -> Html {
             let error = error.clone();
             spawn_local(async move {
                 let client = reqwest::Client::new();
-                let url = format!("http://127.0.0.1:8000/stats/status/{}/count", user_status);
+                let url = format!("https://localhost:8000/stats/status/{}/count", user_status);
                 match client
                     .get(&url)
                     .header(reqwest::header::CONTENT_TYPE, "application/json")
