@@ -17,6 +17,7 @@ pub enum Status {
 pub fn questions_section(props: &QuestionSectionProps) -> Html {
     html! {
         <div class="faq-section">
+            <h1>{"Pytania pomocnicze"}</h1>
             {match props.status {
                 Status::LGBT => html! {
                     <>

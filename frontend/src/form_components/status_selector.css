@@ -6,7 +6,10 @@
     padding: 1rem;
     background: #f8f9fa;
     border-radius: 8px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
+
 
 .status-selector label {
     display: flex;
@@ -21,6 +24,9 @@
 .status-selector label.active {
     background: #2563eb;
     color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 /* FAQ Section */
@@ -56,4 +62,28 @@
     margin-top: 2rem;
     border-top: 2px solid #e5e7eb;
     padding-top: 2rem;
+}
+
+@media (max-width: 767px) {
+    .status-selector {
+        width: 100%;
+    }
+    
+    .status-selector label {
+        display: flex;
+        align-items: center;
+        gap: 0.1rem;
+        padding: 0.8rem 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .status-selector label.active {
+        background: #2563eb;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
 }

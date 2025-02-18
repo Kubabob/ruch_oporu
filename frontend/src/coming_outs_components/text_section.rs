@@ -11,7 +11,7 @@ pub fn text_section() -> Html {
                     <p>{"Chcesz, aby Twoja historia się tu pojawiła?"}</p>
                     <p>
                         {"Przejdź do zakładki "}
-                        <a href="/twoja-historia">{"Twoja historia"}</a>
+                        <a href="#/formularz">{"Opowiedz swoją historię"}</a>
                     </p>
                 </div>
             </div>

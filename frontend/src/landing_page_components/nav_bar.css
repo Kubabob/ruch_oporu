@@ -9,7 +9,7 @@
 }
 
 .navbar-logo a {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #2563eb;
     text-decoration: none;
@@ -17,8 +17,20 @@
 
 .navbar-items {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
+}
+
+/* Desktop buttons - visible by default */
+.desktop-buttons {
+    display: flex;
+    gap: 3rem;
+}
+
+.navbar-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem
 }
 
 .nav-link {
@@ -47,10 +59,12 @@
     position: relative;
     z-index: 1;
     text-decoration: none;
+    font-family: Poppins;
+    font-size: 18px
 }
 
 .nav-button:hover {
-    color: #2563eb;
+    color: #0202028c;
 }
 
 .close-button {
@@ -205,6 +219,10 @@
         background-color: white;
         opacity: 1;
     }
+
+    .desktop-buttons {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
@@ -236,233 +254,17 @@
     }
 }
 
-
-/* test */
-
-.dropdown-menu {
-    position: relative;
-    width: 363px;
-    height: 756px;
-    overflow: hidden;
-    border-radius: 5px;
-    background: #FFF;
+/* Common button styles */
+.nav-button, .mobile-nav-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #2563eb;
+    color: white;
 }
 
-.arrow-back {
-    width: 59px;
-    height: 54px;
-    flex-shrink: 0;
-}
-
-.buttons {
-    width: 323px;
-    height: 468px;
-    flex-shrink: 0;
-}
-
-.o-nas-button {
-    width: 323px;
-    height: 47px;
-    flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 5px;
-    background: #FFADAD;
-}
-
-.onas {
-    /* display: flex; */
-    width: 310px;
-    height: 47px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #000;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: right;
-}
-
-.anonimowe-coming-outy-button {
-    width: 323px;
-    height: 47px;
-    flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 5px;
-    background: #FFD6A5;
-    
-}
-
-.anonimowecomingouty {
-    display: flex;
-    width: 310px;
-    height: 47px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #000;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: right;
-}
-
-.opowiedz-swoja-historie-button {
-    width: 323px;
-    height: 47px;
-    flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 5px;
-    background: #FDFFB6;
-}
-
-.opowiedzswojhistori {
-    display: flex;
-    width: 310px;
-    height: 47px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #000;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: right;
-}
-
-.faq-button {
-    width: 323px;
-    height: 47px;
-    flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 5px;
-    background: #CAFFBF;
-}
-
-.faq {
-    display: flex;
-    width: 310px;
-    height: 47px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #000;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: right;
-}
-
-.wystawa-button {
-    width: 323px;
-    height: 45px;
-    flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 5px;
-    background: #9BF6FF;
-}
-
-.wystawa {
-    display: flex;
-    width: 310px;
-    height: 45px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #000;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: right;
-}
-
-.film-button {
-    width: 323px;
-    height: 47px;
-    flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 5px;
-    background: #A0C4FF;
-}
-
-.film {
-    display: flex;
-    width: 310px;
-    height: 47px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #000;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: right;
-}
-
-.inne-organizacje-button {
-    width: 323px;
-    height: 47px;
-    flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 5px;
-    background: #BDB2FF;
-}
-
-.inneorganizacje {
-    display: flex;
-    width: 310px;
-    height: 47px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #000;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: right;
-}
-
-.kontakt-button {
-    width: 323px;
-    height: 47px;
-    flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 5px;
-    background: #FFC6FF;
-}
-
-.kontakt {
-    display: flex;
-    width: 310px;
-    height: 47px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #000;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: right;
-}
-
-.instagram {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
+.mobile-nav-button {
+    width: 100%;
+    text-align: left;
 }
