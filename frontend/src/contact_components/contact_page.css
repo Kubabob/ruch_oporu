@@ -22,3 +22,8 @@
     margin-right: 0.5rem;
     vertical-align: middle;
 }
+
+.email {
+    font-size: 18px;
+    font-family: Poppins;
+}

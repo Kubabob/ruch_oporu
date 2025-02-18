@@ -71,11 +71,11 @@ pub fn contact_page() -> Html {
                             </div>
                             <button type="submit" class="submit-button">{"Wyślij"}</button>
                         </form>
-                        <p>
+                        <p class="email">
                             {"lub skontaktuj się przez naszą elektroniczną skrzynkę pocztową na adres "}
-                            <a href="mailto:gra.na.orientacje@gmail.com" class="email-link">
+                            <a href="mailto:granaorientacje@gmail.com" class="email-link">
                                 <i class="fas fa-envelope email-icon"></i>
-                                {"gra.na.orientacje@gmail.com"}
+                                {"granaorientacje@gmail.com"}
                             </a>
                             {"."}
                         </p>

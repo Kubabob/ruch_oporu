@@ -8,7 +8,7 @@ pub fn about_us_text_section() -> Html {
                 <h2 class="section-title">{"O nas"}</h2>
                 <div class="text-content">
                     <h2>{"→ KIM JESTEŚMY? ←"}</h2>
-                    <p>{"Stowarzyszenie  „Gra na Orientacje” to wspólnota przyjaciół, założona jako odpowiedź na doświadczenie dyskryminacji /ze względu na orientację seksualną/ w ZHR. Inicjatywa jest tworzona przez byłe i obecne osoby członkowskie i osoby instruktorskie ZHR, w  myśl wartości, w których w tej organizacji zostałyśmy wychowane – odpowiedzialności za społeczeństwo, braterstwa i wzajemnego szacunku."}</p>
+                    <p>{"Stowarzyszenie  „Gra na Orientacje” to wspólnota przyjaciół, założona jako odpowiedź na doświadczenie dyskryminacji ze względu na orientację seksualną w ZHR. Inicjatywa jest tworzona przez byłe i obecne osoby członkowskie i osoby instruktorskie ZHR, w  myśl wartości, w których w tej organizacji zostałyśmy wychowane – odpowiedzialności za społeczeństwo, braterstwa i wzajemnego szacunku."}</p>
                     <h2>{"→ CZYM SIĘ ZAJMUJEMY? ←"}</h2>
                     <p>{"Treść"}</p>
                     <h2>{"→ PO CO JEST TA STRONA? ←"}</h2>
