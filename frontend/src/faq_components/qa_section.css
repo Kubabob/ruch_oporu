@@ -1,3 +1,8 @@
+.faq-wrapper {
+    background: #caffbf3b;
+    display: grid;
+}
+
 .faq-section {
     max-width: 800px;
     margin: 2rem auto;
@@ -12,7 +17,7 @@
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .faq-question {

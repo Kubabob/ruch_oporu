@@ -3,7 +3,7 @@ use yew::prelude::*;
 #[function_component(AboutUsTextSection)]
 pub fn about_us_text_section() -> Html {
     html! {
-        <section class="about-section">
+        <section class="about-section" style="background: #ffadad38;">
             <div class="about-content">
                 <h2 class="section-title">{"O nas"}</h2>
                 <div class="text-content">

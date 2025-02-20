@@ -6,6 +6,7 @@ use crate::faq::FAQ;
 use crate::form::FormPage;
 use crate::landing_page::LandingPage;
 use crate::movie::Movie;
+use crate::other_organizations::OtherOrganizations;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -38,6 +39,9 @@ pub enum Route {
     #[at("/film")]
     Movie,
 
+    #[at("/inne-organizacje")]
+    OtherOrganizations,
+
     #[at("/dokumenty/zgoda-na-wizerunek")]
     ImageConsent,
 
@@ -60,6 +64,7 @@ pub fn switch(routes: Route) -> Html {
         Route::RODO => html! { "RODO" },
         Route::Exhibition => html! { <Exhibition /> },
         Route::Movie => html! { <Movie /> },
+        Route::OtherOrganizations => html! { <OtherOrganizations /> },
         Route::ImageConsent => html! { "Zgoda na wizerunek" },
         Route::Contact => html! { <Contact /> },
         Route::NotFound => html! { "404 Not Found" },

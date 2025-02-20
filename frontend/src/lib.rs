@@ -16,3 +16,5 @@ pub mod landing_page_components;
 pub mod movie;
 pub mod movie_components;
 pub mod navigation_bar_components;
+pub mod other_organizations;
+pub mod other_organizations_components;

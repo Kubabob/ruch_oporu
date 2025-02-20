@@ -2,7 +2,6 @@ use yew::prelude::*;
 
 #[function_component(ContactPage)]
 pub fn contact_page() -> Html {
-
     let email = use_state(|| String::new());
     let message = use_state(|| String::new());
 
@@ -39,8 +38,7 @@ pub fn contact_page() -> Html {
     };
 
     html! {
-        <section class="box-section">
-            <h1>{"Kontakt"}</h1>
+        <section class="box-section" style="background: #ffc6ff3d;">
             <div class="box-grid">
                 // Contact Box 4
                 <div class="box box-4">
@@ -96,7 +94,7 @@ pub fn contact_page() -> Html {
                     </div>
                 </div>
 
-                
+
             </div>
         </section>
     }

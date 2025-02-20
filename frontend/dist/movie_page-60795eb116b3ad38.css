@@ -1,0 +1,10 @@
+.movie-wrapper {
+    display: grid;
+    background: #a0c4ff36;
+    height: 900px;
+    justify-content: center;
+}
+
+.movie-wrapper h1 {
+    font-size: 34px;
+}

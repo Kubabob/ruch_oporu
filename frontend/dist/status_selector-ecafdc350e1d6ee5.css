@@ -31,7 +31,7 @@
 
 /* FAQ Section */
 .faq-section {
-    margin: 2rem 0;
+    margin: 2rem auto;
 }
 
 .faq-input, .faq-textarea {

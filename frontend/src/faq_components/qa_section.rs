@@ -9,7 +9,7 @@ struct FaqItem {
 #[function_component(FaqComponent)]
 fn faq_component(props: &FaqItem) -> Html {
     let expanded = use_state(|| false);
-    
+
     let toggle = {
         let expanded = expanded.clone();
         Callback::from(move |_| {
@@ -21,9 +21,9 @@ fn faq_component(props: &FaqItem) -> Html {
         <div class="faq-item">
             <button class="faq-question" onclick={toggle}>
                 <div class="plus-icon">
-                    <svg class={classes!(expanded.then(|| "rotated"))} 
-                        viewBox="0 0 24 24" 
-                        width="24" 
+                    <svg class={classes!(expanded.then(|| "rotated"))}
+                        viewBox="0 0 24 24"
+                        width="24"
                         height="24"
                     >
                         <path fill="currentColor" d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
@@ -31,7 +31,7 @@ fn faq_component(props: &FaqItem) -> Html {
                 </div>
                 <h3>{&props.question}</h3>
             </button>
-            
+
             {if *expanded {
                 html! {
                     <div class="faq-answer">

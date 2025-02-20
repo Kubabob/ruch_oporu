@@ -1,0 +1,10 @@
+.other-organizations-wrapper {
+    display: grid;
+    background: #bdb2ff33;
+    height: 900px;
+    justify-content: center;
+}
+
+.other-organizations-wrapper h1 {
+    font-size: 34px;
+}

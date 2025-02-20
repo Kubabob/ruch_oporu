@@ -1,12 +1,11 @@
-use yew::prelude::*;
-use web_sys::{File, HtmlInputElement, HtmlTextAreaElement};
-use super::status_selector::StatusSelector;
 use super::questions_section::{QuestionsSection, Status};
+use super::status_selector::StatusSelector;
 use crate::env;
+use web_sys::{File, HtmlInputElement, HtmlTextAreaElement};
+use yew::prelude::*;
 
 #[function_component(FormSection)]
 pub fn form_section() -> Html {
-
     // LGBT/Ally/Innx
     let status = use_state(|| Status::LGBT);
 
@@ -60,9 +59,6 @@ pub fn form_section() -> Html {
 
     // error message
     let error_message = use_state(|| Option::<String>::None);
-
-
-
 
     // LGBT/Ally/Innx on change
     let on_status_change = {
@@ -189,7 +185,6 @@ pub fn form_section() -> Html {
         })
     };
 
-
     // Czy zgadasz sie na wykorzystywanie fragmentów? on change
     let on_usage_consent_change = {
         let usage_consent = usage_consent.clone();
@@ -216,7 +211,6 @@ pub fn form_section() -> Html {
             rodo_consent.set(input.checked());
         })
     };
-    
 
     // let on_status_change_clone1 = on_status_change.clone();
     // let on_status_change_clone2 = on_status_change.clone();
@@ -240,8 +234,6 @@ pub fn form_section() -> Html {
         let rodo_consent = rodo_consent.clone();
         let form_submitted = form_submitted.clone();
         let error_message = error_message.clone();
-    
-
 
         Callback::from(move |e: SubmitEvent| {
             e.prevent_default();
@@ -280,7 +272,6 @@ pub fn form_section() -> Html {
             log::info!("rules_consent: {}", *rules_consent);
             log::info!("rodo_consent: {}", *rodo_consent);
 
-
             // Clear form
             // status.set(String::new());
             status.set(Status::LGBT);
@@ -302,279 +293,281 @@ pub fn form_section() -> Html {
             form_submitted.set(true);
         })
     };
-    
+
     html! {
         <>
-            <div class="form-page">    
+            <div class="form-wrapper">
+                <div class="form-page">
 
-                // Podziekowanie za wypelnienie formularza
-                if *form_submitted {
-                    <div class="thank-you-message">
-                        <h1>{"Dziękujemy za wypełnienie formularza!"}</h1>
-                        <p>{"Twój wpis został zapisany."}</p>
-                    </div>
-                } else {
-                    <>
-                        <h1>{"Opowiedz swoją historię"}</h1>
-                        <h5>{"*obowiązkowe"}</h5>
-                        // Pokaz error jesli wpis jest nieautentyczny
-                        if let Some(error_message) = &*error_message {
-                            <div class="error-message">
-                                {error_message}
-                            </div>
-                        }
-                        <form onsubmit={on_submit}>
-                            // Wybór LGBT/Ally/Innx
-                            // <div class="form-group">
-                            //     <label>{"Kim jesteś?:"}</label>
-                            //     <div class="radio-group">
-                            //         <label>
-                            //             <input
-                            //                 type="radio"
-                            //                 name="option"
-                            //                 value="LGBT"
-                            //                 checked={*status == "LGBT"}
-                            //                 oninput={on_status_change}
-                            //             />
-                            //             {"LGBT"}
-                            //         </label>
-                            //         <label>
-                            //             <input
-                            //                 type="radio"
-                            //                 name="option"
-                            //                 value="Ally"
-                            //                 checked={*status == "Ally"}
-                            //                 oninput={on_status_change_clone1}
-                            //             />
-                            //             {"Ally"}
-                            //         </label>
-                            //         <label>
-                            //             <input
-                            //                 type="radio"
-                            //                 name="option"
-                            //                 value="Innx"
-                            //                 checked={*status == "Innx"}
-                            //                 oninput={on_status_change_clone2}
-                            //             />
-                            //             {"Innx"}
-                            //         </label>
-                            //     </div>
-                            // </div>
-                            <StatusSelector 
-                                current_status={(*status).clone()} 
-                                on_status_change={on_status_change} 
-                            />
-
-
-
-                            // Historia uzytkownika
-
-                            <div class="form-group">
-                                <label for="history">{"Twoja historia:*"}</label>
-                                <textarea
-                                    id="history"
-                                    placeholder="Tutaj napisz swoją historię..."
-                                    value={(*history).clone()}
-                                    oninput={on_history_change}
-                                    rows="4"
-                                    required=true
-                                ></textarea>
-                            </div>
-
-
-                            // Title wpisu
-                            <div class="form-group">
-                                <label for="title">{"Tytuł wpisu:"}</label>
-                                <input
-                                    type="text"
-                                    id="title"
-                                    placeholder="O czym opowiada Twoja historia w jednym zdaniu lub słowie?"
-                                    value={(*title).clone()}
-                                    oninput={on_title_change}
-                                    //required=true
+                    // Podziekowanie za wypelnienie formularza
+                    if *form_submitted {
+                        <div class="thank-you-message">
+                            <h1>{"Dziękujemy za wypełnienie formularza!"}</h1>
+                            <p>{"Twój wpis został zapisany."}</p>
+                        </div>
+                    } else {
+                        <>
+                            <h1>{"Opowiedz swoją historię"}</h1>
+                            <h5>{"*obowiązkowe"}</h5>
+                            // Pokaz error jesli wpis jest nieautentyczny
+                            if let Some(error_message) = &*error_message {
+                                <div class="error-message">
+                                    {error_message}
+                                </div>
+                            }
+                            <form onsubmit={on_submit}>
+                                // Wybór LGBT/Ally/Innx
+                                // <div class="form-group">
+                                //     <label>{"Kim jesteś?:"}</label>
+                                //     <div class="radio-group">
+                                //         <label>
+                                //             <input
+                                //                 type="radio"
+                                //                 name="option"
+                                //                 value="LGBT"
+                                //                 checked={*status == "LGBT"}
+                                //                 oninput={on_status_change}
+                                //             />
+                                //             {"LGBT"}
+                                //         </label>
+                                //         <label>
+                                //             <input
+                                //                 type="radio"
+                                //                 name="option"
+                                //                 value="Ally"
+                                //                 checked={*status == "Ally"}
+                                //                 oninput={on_status_change_clone1}
+                                //             />
+                                //             {"Ally"}
+                                //         </label>
+                                //         <label>
+                                //             <input
+                                //                 type="radio"
+                                //                 name="option"
+                                //                 value="Innx"
+                                //                 checked={*status == "Innx"}
+                                //                 oninput={on_status_change_clone2}
+                                //             />
+                                //             {"Innx"}
+                                //         </label>
+                                //     </div>
+                                // </div>
+                                <StatusSelector
+                                    current_status={(*status).clone()}
+                                    on_status_change={on_status_change}
                                 />
-                            </div>
 
 
-                            // Cytat który chciałbyś umieścić
-                            <div class="form-group">
-                                <label for="quote">{"Wybrany cytat/krótki fragment, który będzie wyszczególniony na stronie:"}</label>
-                                <input
-                                    type="text"
-                                    id="quote"
-                                    placeholder="Który fragment uważasz za najważniejszy?"
-                                    oninput={on_quote_change}
-                                    //required=true
-                                />
-                            </div>
 
+                                // Historia uzytkownika
 
-                            // Czy chcesz umieścić grafikę?
-                            <div class="form-group">
-                                <label for="czy_grafika">{"Czy chcesz dodać grafikę lub zdjęcie do Twojej historii?"}</label>
-                                <input
-                                    type="checkbox"
-                                    id="czy_grafika"
-                                    checked={*is_graphic}
-                                    oninput={on_is_graphic_change}
-                                />
-                            </div>
-
-
-                            if *is_graphic {
-                                // Dodaj grafikę
                                 <div class="form-group">
-                                    <label for="graphic">{"Dodaj grafikę:"}</label>
+                                    <label for="history">{"Twoja historia:*"}</label>
+                                    <textarea
+                                        id="history"
+                                        placeholder="Tutaj napisz swoją historię..."
+                                        value={(*history).clone()}
+                                        oninput={on_history_change}
+                                        rows="4"
+                                        required=true
+                                    ></textarea>
+                                </div>
+
+
+                                // Title wpisu
+                                <div class="form-group">
+                                    <label for="title">{"Tytuł wpisu:"}</label>
                                     <input
-                                        type="file"
-                                        id="graphic"
-                                        multiple=false
-                                        onchange={on_graphic_change}
+                                        type="text"
+                                        id="title"
+                                        placeholder="O czym opowiada Twoja historia w jednym zdaniu lub słowie?"
+                                        value={(*title).clone()}
+                                        oninput={on_title_change}
+                                        //required=true
                                     />
                                 </div>
 
-                                // Czy znajduja się osoby trzecie na grafice?
+
+                                // Cytat który chciałbyś umieścić
                                 <div class="form-group">
-                                    <label for="is_another">{"Czy na Twoim zdjęciu znajdują się osoby trzecie?"}</label>
+                                    <label for="quote">{"Wybrany cytat/krótki fragment, który będzie wyszczególniony na stronie:"}</label>
+                                    <input
+                                        type="text"
+                                        id="quote"
+                                        placeholder="Który fragment uważasz za najważniejszy?"
+                                        oninput={on_quote_change}
+                                        //required=true
+                                    />
+                                </div>
+
+
+                                // Czy chcesz umieścić grafikę?
+                                <div class="form-group">
+                                    <label for="czy_grafika">{"Czy chcesz dodać grafikę lub zdjęcie do Twojej historii?"}</label>
                                     <input
                                         type="checkbox"
-                                        id="is_another"
-                                        checked={*is_another}
-                                        oninput={on_is_another_change}
+                                        id="czy_grafika"
+                                        checked={*is_graphic}
+                                        oninput={on_is_graphic_change}
                                     />
                                 </div>
 
-                                if *is_another {
-                                    // Dodaj zgode na wizerunek
+
+                                if *is_graphic {
+                                    // Dodaj grafikę
                                     <div class="form-group">
-                                        <label for="image_consent">
-                                        {"Dodaj zgodę na udostępnienie wizerunku:\n"}
-                                        <a href={env::IMAGE_CONSENT_URL} target="_blank">{"zgoda do pobrania"}</a>
-                                        </label>
+                                        <label for="graphic">{"Dodaj grafikę:"}</label>
                                         <input
                                             type="file"
-                                            id="image_consent"
-                                            //multiple=true
-                                            onchange={on_image_consent_change}
+                                            id="graphic"
+                                            multiple=false
+                                            onchange={on_graphic_change}
+                                        />
+                                    </div>
+
+                                    // Czy znajduja się osoby trzecie na grafice?
+                                    <div class="form-group">
+                                        <label for="is_another">{"Czy na Twoim zdjęciu znajdują się osoby trzecie?"}</label>
+                                        <input
+                                            type="checkbox"
+                                            id="is_another"
+                                            checked={*is_another}
+                                            oninput={on_is_another_change}
+                                        />
+                                    </div>
+
+                                    if *is_another {
+                                        // Dodaj zgode na wizerunek
+                                        <div class="form-group">
+                                            <label for="image_consent">
+                                            {"Dodaj zgodę na udostępnienie wizerunku:\n"}
+                                            <a href={env::IMAGE_CONSENT_URL} target="_blank">{"zgoda do pobrania"}</a>
+                                            </label>
+                                            <input
+                                                type="file"
+                                                id="image_consent"
+                                                //multiple=true
+                                                onchange={on_image_consent_change}
+                                            />
+                                        </div>
+                                    }
+
+                                    // Czy zezwalasz na opublikowanie grafiki?
+                                    <div class="form-group">
+                                        <label for="is_public_image">{"Wyrażam zgodę na opublikowanie zdjęcia/grafiki na stronie."}</label>
+                                        <input
+                                            type="checkbox"
+                                            id="is_public_image"
+                                            checked={*is_public_image}
+                                            oninput={on_is_public_image_change}
                                         />
                                     </div>
                                 }
 
-                                // Czy zezwalasz na opublikowanie grafiki?
+                                // Czy chcesz pozostać anonimowy?
                                 <div class="form-group">
-                                    <label for="is_public_image">{"Wyrażam zgodę na opublikowanie zdjęcia/grafiki na stronie."}</label>
+                                    <label for="is_nonanonymous">{"Czy chcesz podpisać się imieniem i nazwiskiem?"}</label>
                                     <input
                                         type="checkbox"
-                                        id="is_public_image"
-                                        checked={*is_public_image}
-                                        oninput={on_is_public_image_change}
+                                        id="is_anoymous"
+                                        checked={*is_nonanonymous}
+                                        oninput={on_is_anonymous_change}
                                     />
                                 </div>
-                            }
 
-                            // Czy chcesz pozostać anonimowy?
-                            <div class="form-group">
-                                <label for="is_nonanonymous">{"Czy chcesz podpisać się imieniem i nazwiskiem?"}</label>
-                                <input
-                                    type="checkbox"
-                                    id="is_anoymous"
-                                    checked={*is_nonanonymous}
-                                    oninput={on_is_anonymous_change}
-                                />
-                            </div>
+                                if *is_nonanonymous {
+                                    // podpis
+                                    <div class="form-group">
+                                        <label for="signature">{"Podpis:"}</label>
+                                        <input
+                                            type="text"
+                                            id="signature"
+                                            placeholder="Imię i nazwisko"
+                                            value={(*signature).clone()}
+                                            oninput={on_signature_change}
+                                            required=true
+                                        />
+                                    </div>
+                                }
 
-                            if *is_nonanonymous {
-                                // podpis
+                                // Czy to jest autentyczny wpis?
                                 <div class="form-group">
-                                    <label for="signature">{"Podpis:"}</label>
+                                    <label for="is_authentic">{"Potwierdzam, że wpis opisuje moje osobiste doświadczenie jako osoba nieheteronormatywna lub wspierająca. Moja wypowiedź nie zawiera mowy nienawiści"}</label>
                                     <input
-                                        type="text"
-                                        id="signature"
-                                        placeholder="Imię i nazwisko"
-                                        value={(*signature).clone()}
-                                        oninput={on_signature_change}
+                                        type="checkbox"
+                                        id="is_authentic"
+                                        checked={*is_authentic}
+                                        oninput={on_is_authentic_change}
+                                    />
+                                </div>
+
+                                // Zgoda na upublicznienie wpisu
+                                <div class="form-group">
+                                    <label for="is_public">
+                                        {"Wyrażam zgodę na upublicznienie mojego wpisu na stronie "}
+                                        <a href={env::DOMAIN} target="_blank">{"www.granaorientacje.pl"}</a>
+                                    </label>
+                                    <input
+                                        type="checkbox"
+                                        id="is_public"
+                                        checked={*is_public}
+                                        oninput={on_is_public_change}
+                                        //required=true
+                                    />
+                                </div>
+
+                                // Czy zgadasz sie na wykorzystywanie fragmentów?
+                                <div class="form-group">
+                                    <label for="usage_consent">{"Wyrażam zgodę na wykorzystywanie fragmentów tekstów do promocji projektu w mediach społecznościowych."}</label>
+                                    <input
+                                        type="checkbox"
+                                        id="usage_consent"
+                                        checked={*usage_consent}
+                                        oninput={on_usage_consent_change}
+                                    />
+                                </div>
+
+                                // Zgoda na regulamin
+                                <div class="form-group">
+                                    <label for="rules_consent">
+                                        {"Zgadzam się z regulaminem projektu dostępnym na stronie: "}
+                                        <a href={env::RULES_URL} target="_blank">{"regulamin"}</a>
+                                    </label>
+                                    <input
+                                        type="checkbox"
+                                        id="rules_consent"
+                                        checked={*rules_consent}
+                                        oninput={on_rules_consent_change}
                                         required=true
                                     />
                                 </div>
-                            }
 
-                            // Czy to jest autentyczny wpis?
-                            <div class="form-group">
-                                <label for="is_authentic">{"Potwierdzam, że wpis opisuje moje osobiste doświadczenie jako osoba nieheteronormatywna lub wspierająca. Moja wypowiedź nie zawiera mowy nienawiści"}</label>
-                                <input
-                                    type="checkbox"
-                                    id="is_authentic"
-                                    checked={*is_authentic}
-                                    oninput={on_is_authentic_change}
-                                />
-                            </div>
+                                // Zgoda na RODO
+                                <div class="form-group">
+                                    <label for="rodo_consent">
+                                        {"Wyrażam zgodę na przetwarzanie danych osobowych "}
+                                        <a href={env::RODO_URL} target="_blank">{"RODO"}</a>
+                                    </label>
+                                    <input
+                                        type="checkbox"
+                                        id="rodo_consent"
+                                        checked={*rodo_consent}
+                                        oninput={on_rodo_consent_change}
+                                        required=true
+                                    />
+                                </div>
 
-                            // Zgoda na upublicznienie wpisu
-                            <div class="form-group">
-                                <label for="is_public">
-                                    {"Wyrażam zgodę na upublicznienie mojego wpisu na stronie "}
-                                    <a href={env::DOMAIN} target="_blank">{"www.granaorientacje.pl"}</a>
-                                </label>
-                                <input
-                                    type="checkbox"
-                                    id="is_public"
-                                    checked={*is_public}
-                                    oninput={on_is_public_change}
-                                    //required=true
-                                />
-                            </div>
+                                <button type="submit" class="submit-button">{"Submit"}</button>
+                            </form>
 
-                            // Czy zgadasz sie na wykorzystywanie fragmentów?
-                            <div class="form-group">
-                                <label for="usage_consent">{"Wyrażam zgodę na wykorzystywanie fragmentów tekstów do promocji projektu w mediach społecznościowych."}</label>
-                                <input
-                                    type="checkbox"
-                                    id="usage_consent"
-                                    checked={*usage_consent}
-                                    oninput={on_usage_consent_change}
-                                />
-                            </div>
 
-                            // Zgoda na regulamin
-                            <div class="form-group">
-                                <label for="rules_consent">
-                                    {"Zgadzam się z regulaminem projektu dostępnym na stronie: "}
-                                    <a href={env::RULES_URL} target="_blank">{"regulamin"}</a>
-                                </label>
-                                <input
-                                    type="checkbox"
-                                    id="rules_consent"
-                                    checked={*rules_consent}
-                                    oninput={on_rules_consent_change}
-                                    required=true
-                                />
-                            </div>
+                        </>
+                    }
+                </div>
 
-                            // Zgoda na RODO
-                            <div class="form-group">
-                                <label for="rodo_consent">
-                                    {"Wyrażam zgodę na przetwarzanie danych osobowych "}
-                                    <a href={env::RODO_URL} target="_blank">{"RODO"}</a>
-                                </label>
-                                <input
-                                    type="checkbox"
-                                    id="rodo_consent"
-                                    checked={*rodo_consent}
-                                    oninput={on_rodo_consent_change}
-                                    required=true
-                                />
-                            </div>
-
-                            <button type="submit" class="submit-button">{"Submit"}</button>
-                        </form>
-
-                        
-                    </>
-                }
-            </div>
-
-            <div class="form-page">
-                <QuestionsSection status={(*status).clone()} />
+                <div class="form-page">
+                    <QuestionsSection status={(*status).clone()} />
+                </div>
             </div>
         </>
     }

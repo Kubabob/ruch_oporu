@@ -1,6 +1,7 @@
 .about-section {
     padding: 0.1rem 0rem 2rem 0rem;
-    background: #f8f9fa;
+    display: grid;
+    height: 900px;
 }
 
 .about-content {
@@ -10,7 +11,7 @@
 }
 
 .section-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 2.5rem;
     color: #1f2937;
     margin-bottom: 20px;
@@ -22,11 +23,11 @@
 
 .text-content p {
     color: #000;
-font-family: Poppins;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .text-content p:last-child {
@@ -37,12 +38,12 @@ line-height: normal;
     .about-section {
         padding: 2rem 1rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
         max-width: 360px;
     }
-    
+
     .text-content p {
         font-size: 1rem;
         line-height: 1.6;
