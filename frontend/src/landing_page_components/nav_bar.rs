@@ -62,7 +62,9 @@ pub fn nav_bar() -> Html {
     html! {
         <nav class="navbar">
             <div class="navbar-logo">
-                <a href="/">{ "Logo" }</a>
+                <a href="/">
+                    <img src="img/logo.svg" alt="Logo" />
+                </a>
             </div>
 
             <div class="navbar-buttons">

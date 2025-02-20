@@ -83,7 +83,7 @@ pub fn contact_page() -> Html {
                 // Big Box 1 (Top)
                 <div class="box box-1">
                     <div class="box-content">
-                        <h2>{"→ Chcesz z nami porozmawiać ←"}</h2>
+                        <h2>{"→ Chcesz z nami porozmawiać? ←"}</h2>
                         <p>{"Napisz na nasz adres mailowy, opisz o czym chcesz porozmawiać i umów się na rozmowę online"}</p>
                         <h2>{"→ Chcesz się zaangażować? ←"}</h2>
                         <p>{"Poniżej znajdziesz listę możliwych opcji. Napisz do nas!"}</p>
