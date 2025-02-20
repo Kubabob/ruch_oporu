@@ -1,0 +1,10 @@
+.exhibition-wrapper {
+    display: grid;
+    background: #9bf6ff30;
+    height: 900px;
+    justify-content: center;
+}
+
+.exhibition-wrapper h1 {
+    font-size: 34px;
+}

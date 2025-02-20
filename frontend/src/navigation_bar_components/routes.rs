@@ -1,17 +1,18 @@
-use yew::prelude::*;
-use yew_router::prelude::*;
-use crate::landing_page::LandingPage;
 use crate::about_us::AboutUs;
 use crate::coming_outs::ComingOuts;
+use crate::contact::Contact;
+use crate::exhibition::Exhibition;
 use crate::faq::FAQ;
 use crate::form::FormPage;
-use crate::contact::Contact;
+use crate::landing_page::LandingPage;
+use yew::prelude::*;
+use yew_router::prelude::*;
 
 #[derive(Routable, PartialEq, Clone)]
 pub enum Route {
     #[at("/")]
     Home,
-    
+
     #[at("/o-nas")]
     AboutUs,
 
@@ -30,12 +31,15 @@ pub enum Route {
     #[at("/rodo")]
     RODO,
 
+    #[at("/wystawa")]
+    Exhibition,
+
     #[at("/dokumenty/zgoda-na-wizerunek")]
     ImageConsent,
 
     #[at("/kontakt")]
     Contact,
-    
+
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -50,6 +54,7 @@ pub fn switch(routes: Route) -> Html {
         Route::FormPage => html! { <FormPage /> },
         Route::Rules => html! { "Regulamin" },
         Route::RODO => html! { "RODO" },
+        Route::Exhibition => html! { <Exhibition /> },
         Route::ImageConsent => html! { "Zgoda na wizerunek" },
         Route::Contact => html! { <Contact /> },
         Route::NotFound => html! { "404 Not Found" },
