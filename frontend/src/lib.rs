@@ -13,4 +13,6 @@ pub mod form;
 pub mod form_components;
 pub mod landing_page;
 pub mod landing_page_components;
+pub mod movie;
+pub mod movie_components;
 pub mod navigation_bar_components;
