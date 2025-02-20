@@ -1,14 +1,12 @@
-use yew::prelude::*;
-use web_sys::MouseEvent;
 use wasm_bindgen::closure::Closure;
 use wasm_bindgen::JsCast;
-
+use web_sys::MouseEvent;
+use yew::prelude::*;
 
 #[function_component(NavBar)]
 pub fn nav_bar() -> Html {
-
     let dropdown_visible = use_state(|| false);
-    
+
     let toggle_dropdown = {
         let dropdown_visible = dropdown_visible.clone();
         Callback::from(move |_e: MouseEvent| {
@@ -53,18 +51,18 @@ pub fn nav_bar() -> Html {
                 .unwrap();
             // Cleanup the event listener
             move || {
-                document.remove_event_listener_with_callback("click", closure.as_ref().unchecked_ref()).unwrap();
+                document
+                    .remove_event_listener_with_callback("click", closure.as_ref().unchecked_ref())
+                    .unwrap();
                 closure.forget(); // Prevent memory leaks
             }
         });
     }
 
-    
-
     html! {
         <nav class="navbar">
             <div class="navbar-logo">
-                <a href="/ruch_oporu/">{ "Logo" }</a>
+                <a href="/">{ "Logo" }</a>
             </div>
 
             <div class="navbar-buttons">
@@ -78,7 +76,7 @@ pub fn nav_bar() -> Html {
                         <a class="nav-button" onclick={toggle_dropdown}>
                             { "Menu ▾" }
                         </a>
-                        
+
                         <div class={classes!("dropdown-content", (*dropdown_visible).then_some("active"))}>
                             // Add the close button here
                             <a class="close-button" onclick={toggle_dropdown_closing}>
