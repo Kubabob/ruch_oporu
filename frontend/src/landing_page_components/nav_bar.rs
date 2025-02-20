@@ -69,8 +69,9 @@ pub fn nav_bar() -> Html {
 
             <div class="navbar-buttons">
                 <div class="desktop-buttons">
-                    <a href="#/wystawa" class="nav-button">{ "Wystawa" }</a>
-                    <a href="#/film" class="nav-button">{ "Film" }</a>
+                    <a href="#/o-nas" class="nav-button">{ "O nas" }</a>
+                    <a href="#/faq" class="nav-button">{ "FAQ" }</a>
+                    <a href="#/kontakt" class="nav-button">{ "Kontakt" }</a>
                 </div>
 
                 <div class="navbar-items">
