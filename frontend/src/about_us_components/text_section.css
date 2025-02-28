@@ -2,6 +2,7 @@
     padding: 0.1rem 0rem 2rem 0rem;
     display: grid;
     height: 900px;
+    background: #ffadad52;
 }
 
 .about-content {
@@ -32,6 +33,14 @@
 
 .text-content p:last-child {
     margin-bottom: 0;
+}
+
+body #about-us {
+    background: #ffadad38;
+}
+
+.box-about-page {
+    margin: 2rem auto;
 }
 
 @media (max-width: 768px) {
