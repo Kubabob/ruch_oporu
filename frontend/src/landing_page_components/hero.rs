@@ -11,7 +11,7 @@ pub fn hero() -> Html {
             <div class="hero-content">
                 <h1 class="hero-title">
                     <span class="left-part">{"GRA"}</span>
-                    <span class="right-part">{"na ORIENTACJE"}</span>
+                    <span class="right-part">{"na ORIENTACJĘ"}</span>
                 </h1>
 
                 // <div class="stats-container">
