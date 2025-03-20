@@ -5,7 +5,7 @@ pub fn hero() -> Html {
     html! {
         <section class="hero-section">
             <div class="image-container">
-                <img src="img/homepage-bg3.jpg" alt="Super cool zdjęcie, które się jeszcze nie załadowało :)" class="faded-border-image" />
+                <img src="img/homepage-bg4.png" alt="Super cool zdjęcie, które się jeszcze nie załadowało :)" class="faded-border-image" />
             </div>
 
             <div class="hero-content">

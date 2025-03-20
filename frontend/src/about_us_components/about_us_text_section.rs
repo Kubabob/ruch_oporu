@@ -4,7 +4,7 @@ use yew::prelude::*;
 pub fn about_us_text_section() -> Html {
     html! {
         // <body id="about-us">
-            <section class="about-section">
+            <section class="about-section" id="about-us">
                 <div class="box-grid">
                 <div class="box box-4 box-about-page">
                         <div class="box-content">

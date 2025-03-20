@@ -15,13 +15,15 @@ async fn main() -> std::io::Result<()> {
     let backend_url = env::var("BACKEND_URL").expect("BACKEND_URL must be set");
 
     HttpServer::new(|| {
-        let cors = Cors::default()
-            // .allowed_origin(&env::var("FRONTEND_URL").expect("FRONTEND_URL must be set")) // Your frontend origin
-            .allow_any_origin()
-            .allowed_methods(vec!["GET", "POST", "OPTIONS"])
-            .allowed_headers(vec![header::CONTENT_TYPE])
-            .supports_credentials()
-            .max_age(3600);
+        // let cors = Cors::default()
+        //     // .allowed_origin(&env::var("FRONTEND_URL").expect("FRONTEND_URL must be set")) // Your frontend origin
+        //     .allow_any_origin()
+        //     .allowed_methods(vec!["GET", "POST", "OPTIONS"])
+        //     .allowed_headers(vec![header::CONTENT_TYPE])
+        //     .supports_credentials()
+        //     .max_age(3600);
+
+        let cors = Cors::permissive();
         
         App::new()
             .wrap(Logger::default())

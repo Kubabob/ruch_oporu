@@ -1,7 +1,12 @@
 .paginated-section {
     padding: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 100px auto;
+}
+
+.articles-page {
+    background: #ffd6a542;
+    /* background: #ffadad52; */
 }
 
 .boxes-grid {
@@ -17,7 +22,7 @@
     background: white;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -41,7 +46,9 @@
     object-fit: contain;
     padding: 1rem; /* Add space around image*/
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 .loading-indicator {
@@ -50,7 +57,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #9ca3af;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .lazy-image {
@@ -80,14 +87,14 @@
 }
 
 .text-box h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 1.2rem;
     color: #1f2937;
     margin-bottom: 1rem;
 }
 
 .text-box p {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-size: 1rem;
     color: #4b5563;
     line-height: 1.6;
@@ -131,14 +138,18 @@
 }
 
 .page-indicator {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #4b5563;
     font-size: 0.9rem;
 }
 
 @keyframes shimmer {
-    0% { background-position: -1000px 0; }
-    100% { background-position: 1000px 0; }
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
 }
 
 .lazy-image:not([src*=".jpg"]) {
@@ -156,21 +167,20 @@
     .boxes-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .pagination-controls {
         flex-direction: column;
     }
-    
 
     .box-image {
         max-height: 150px;
         padding: 0.5rem;
     }
-    
+
     .text-box {
         padding: 1rem;
     }
-    
+
     .box-image-container {
         min-height: 150px;
     }

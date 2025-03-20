@@ -1,0 +1,70 @@
+.about-section {
+    display: grid;
+    height: 100%;
+}
+
+#about-us {
+    background: #ffadad52;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+.text-content {
+    text-align: left;
+}
+
+.text-content p {
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.text-content p:last-child {
+    margin-bottom: 0;
+}
+
+html,
+body {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+.box-about-page {
+    margin: 2rem auto;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        /* padding: 1rem 1rem; */
+    }
+
+    .section-title {
+        font-size: 2rem;
+        max-width: 360px;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    html,
+    body {
+        min-height: 100% !important;
+        height: 100%;
+    }
+}

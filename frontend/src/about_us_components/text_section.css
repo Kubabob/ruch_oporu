@@ -1,7 +1,9 @@
 .about-section {
-    padding: 0.1rem 0rem 2rem 0rem;
     display: grid;
-    height: 900px;
+    height: 100%;
+}
+
+#about-us {
     background: #ffadad52;
 }
 
@@ -35,8 +37,10 @@
     margin-bottom: 0;
 }
 
-body #about-us {
-    background: #ffadad38;
+html,
+body {
+    min-height: 100% !important;
+    height: 100%;
 }
 
 .box-about-page {
@@ -45,7 +49,7 @@ body #about-us {
 
 @media (max-width: 768px) {
     .about-section {
-        padding: 2rem 1rem;
+        /* padding: 1rem 1rem; */
     }
 
     .section-title {
@@ -56,5 +60,11 @@ body #about-us {
     .text-content p {
         font-size: 1rem;
         line-height: 1.6;
+    }
+
+    html,
+    body {
+        min-height: 100% !important;
+        height: 100%;
     }
 }
