@@ -1,0 +1,15 @@
+:root {
+    --green: #37633B;
+    --white: #FCFCFC;
+    --body-white: #fff;
+    --orange: #CD6E3E;
+    --black: #000;
+    --dark-gray: #313030;
+
+    --head-font: "Bricolage Grotesque";
+    --head-font-alt: "Comic sans";
+
+    --body-font: "Inter";
+    --body-font-alt: "Serif";
+}
+

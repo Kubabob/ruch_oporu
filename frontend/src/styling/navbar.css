@@ -1,6 +1,7 @@
 nav {
     display: flex;
     padding: 1.5rem;
+    height: 2rem;
     justify-content: space-around;
     align-items: center;
     /* background-color: aqua; */

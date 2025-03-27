@@ -1,1 +1,4 @@
 pub mod navbar;
+pub mod landing_page;
+pub mod routes;
+pub mod floating_box;
