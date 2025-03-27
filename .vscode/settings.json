@@ -1,0 +1,42 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "postgres",
+            "database": "ruch_oporu_db",
+            "username": "ruch_oporu",
+            "password": "ruch_oporu_haslo"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "testdb",
+            "database": "testdb",
+            "username": "testuser"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "mysql2.small.pl",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "gno_smallhost_devel",
+            "database": "m2462_development",
+            "username": "m2462",
+            "askForPassword": true
+        }
+    ],
+    "git.ignoreLimitWarning": true
+}
