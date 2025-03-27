@@ -19,15 +19,15 @@ pub fn navbar() -> Html {
 
                 <div class="menu-wrapper">
                     <a href="/o-nas">{"O Nas"}</a>
-                    <a href="/">{"Wysłuchaj"}</a>
-                    <a href="/">{"Podziel się"}</a>
+                    <a href="/wysluchaj">{"Wysłuchaj"}</a>
+                    <a href="/podziel-sie">{"Podziel się"}</a>
                     <details id="wiecej-button">
                         <summary id="wiecej">{"Więcej"}</summary>
                         <div id="wiecej-options-wrapper">
                             <div id="wiecej-options">
-                                <a href="/">{"Inne organizacje"}</a>
-                                <a href="/">{"Wystawa"}</a>
-                                <a href="/">{"Film"}</a>
+                                <a href="/inne-organizacje">{"Inne organizacje"}</a>
+                                <a href="/wystawa">{"Wystawa"}</a>
+                                <a href="/film">{"Film"}</a>
                             </div>
                         </div>
                     </details>
