@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-set -euo pipefail
+rm -rf ../docs/
 
-# Build the project
-trunk build --release --public-url "/$REPO_NAME/"
+mkdir -p ../docs/
 
-# Create .nojekyll file to disable Jekyll processing
-touch dist/.nojekyll
+cp -r ./dist/* ../docs
+
+git add ../docs
+
+git commit -m 'deploy'
+
+git push

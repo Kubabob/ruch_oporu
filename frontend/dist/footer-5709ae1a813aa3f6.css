@@ -8,6 +8,7 @@ footer {
     flex-wrap: wrap;
     background: var(--green);
     margin-top: 4rem;
+
 }
 
 .footer-content-wrapper {
@@ -56,11 +57,14 @@ img.logo#footer {
 p.gra-na-orientacje#footer {
     color: var(--body-white);
     font-size: 2.1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 p.stowarzyszenie#footer {
     color: var(--body-white);
     font-size: 0.9375rem;
+    margin-top: 0;
 }
 
 .footer-lower-wrapper {
