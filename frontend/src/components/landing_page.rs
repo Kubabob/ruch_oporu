@@ -1,5 +1,6 @@
 use yew::prelude::*;
 use crate::components::floating_box::FloatingBox;
+use crate::components::form_box::ContactBox;
 
 #[function_component(LandingPage)]
 pub fn landing_page() -> Html {
@@ -39,6 +40,10 @@ pub fn landing_page() -> Html {
                     <FloatingBox img_src="../graphics/floating-box-2.jpg" heading="Opowiedz swoją historię" orange_text="Strefa 'Podziel się'" green_text="Wypełnij anonimowy formularz" href="podziel-sie"/>
                     <FloatingBox img_src="../graphics/floating-box-3.jpg" heading="Pytania i odpowiedzi" orange_text="Strefa 'FAQ'" green_text="Zobacz więcej" href="faq"/>
                 </div>
+            </section>
+
+            <section class="contact">
+                <ContactBox />
             </section>
         // </div>
         </>

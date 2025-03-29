@@ -8,10 +8,10 @@ pub fn navbar() -> Html {
                 <a class="logo-wrapper" href="/">
                     <img class="logo" src="../graphics/compass.svg" alt="Logo kompasu" />
                     <div class="logo-text">
-                        <p id="gra-na-orientacje">
+                        <p class="gra-na-orientacje">
                             {"Gra na Orientację"}
                         </p>
-                        <p id="stowarzyszenie">
+                        <p class="stowarzyszenie">
                             {"Stowarzyszenie"}    
                         </p>
                     </div>
