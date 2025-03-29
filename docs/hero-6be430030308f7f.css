@@ -1,0 +1,45 @@
+.hero {
+    display: flex;
+    /* width: 108rem;  */
+    /* height: 50.6875rem; */
+    padding: 25.375rem 54rem 16.1875rem 4.8125rem;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url("../graphics/homepage-bg.png") lightgray 50% / cover no-repeat;
+}
+
+.hero-text-wrapper {
+    display: flex;
+    width: 49.1875rem;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.gra-na-orientacje-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.gra-na-orientacje-wrapper > #gra-na-orientacje {
+    color:  var(--body-white);
+    font-family: var(--head-font), var(--head-font-alt);
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    align-self: stretch;
+    margin: 0 0 0 0;
+}
+
+#twoja-bezpieczna-przestrzen {
+    color:  var(--body-white);
+    font-family: var(--head-font), var(--head-font-alt);
+    font-size: 2.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: stretch;
+    margin: 0 0 0 0;
+}

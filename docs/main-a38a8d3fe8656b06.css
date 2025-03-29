@@ -1,0 +1,29 @@
+:root {
+    --green: #37633B;
+    --dark-green: #244227;
+    --white: #FCFCFC;
+    --body-white: #fff;
+    --orange: #CD6E3E;
+    --black: #000;
+    --dark-gray: #313030;
+    --darker-gray: #1e1e1e;
+
+    --head-font: "Bricolage Grotesque";
+    --head-font-alt: "Comic sans";
+
+    --body-font: "Inter";
+    --body-font-alt: "Serif";
+
+    --form-spacing-600: 1.5rem;
+    --form-spacing-300: 0.5rem;
+    --form-spacing-400: 1rem;
+    --form-spacing-200: 0.2rem;
+    --spacing-1600: 4.2rem;
+    --spacing-800: 2rem;
+
+    --pale-gray: #d9d9d9;
+    --stroke-border-size: 1px;
+    --label-font-weight: 400;
+    --label-font-size: 16;
+}
+
