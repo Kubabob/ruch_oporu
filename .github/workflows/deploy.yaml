@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # or your default branch name
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: wasm32-unknown-unknown
+          override: true
+          
+      - name: Install trunk
+        uses: jetli/trunk-action@v0.4.0
+        
+      - name: Build
+        run: |
+          cd frontend
+          export REPO_NAME=${GITHUB_REPOSITORY#*/}
+          trunk build --release --public-url "/$REPO_NAME/"
+          cp -r dist/* ../dist/
+          touch ../dist/.nojekyll
+          
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
