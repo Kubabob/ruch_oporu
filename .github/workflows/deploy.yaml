@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master  # or your default branch name
+      - main
 
 permissions:
   contents: write
@@ -20,7 +20,6 @@ jobs:
         with:
           toolchain: stable
           target: wasm32-unknown-unknown
-          override: true
           
       - name: Install trunk
         uses: jetli/trunk-action@v0.4.0
@@ -30,6 +29,7 @@ jobs:
           cd frontend
           export REPO_NAME=${GITHUB_REPOSITORY#*/}
           trunk build --release --public-url "/$REPO_NAME/"
+          mkdir -p ../dist
           cp -r dist/* ../dist/
           touch ../dist/.nojekyll
           
