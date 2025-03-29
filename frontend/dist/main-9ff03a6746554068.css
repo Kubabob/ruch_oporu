@@ -3,6 +3,7 @@
     --dark-green: #244227;
     --white: #FCFCFC;
     --body-white: #fff;
+    --dirty-white: #f8f8f8;
     --orange: #CD6E3E;
     --black: #000;
     --dark-gray: #313030;
@@ -22,6 +23,7 @@
     --spacing-800: 2rem;
 
     --pale-gray: #d9d9d9;
+    --light-gray: #b3b3b3;
     --stroke-border-size: 1px;
     --label-font-weight: 400;
     --label-font-size: 16;

@@ -2,6 +2,7 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 
 use super::landing_page::LandingPage;
+use super::form_page::FormPage;
 
 #[derive(Routable, PartialEq, Clone)]
 pub enum Route {
@@ -17,8 +18,8 @@ pub enum Route {
     // #[at("/faq")]
     // FAQ,
 
-    // #[at("/podziel-sie")]
-    // FormPage,
+    #[at("/podziel-sie")]
+    FormPage,
 
     // #[at("/regulamin")]
     // Rules,
@@ -52,7 +53,7 @@ pub fn switch(routes: Route) -> Html {
         // Route::AboutUs => html! { <AboutUs /> },
         // Route::ComingOuts => html! { <ComingOuts /> },
         // Route::FAQ => html! { <FAQ /> },
-        // Route::FormPage => html! { <FormPage /> },
+        Route::FormPage => html! { <FormPage /> },
         // Route::Rules => html! { "Regulamin" },
         // Route::RODO => html! { "RODO" },
         // Route::Exhibition => html! { <Exhibition /> },

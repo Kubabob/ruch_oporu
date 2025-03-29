@@ -1,6 +1,25 @@
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq, Debug)]
+pub struct GreenArrowedLinkProps {
+    pub href: String,
+    pub text: String
+}
+
+#[function_component(GreenArrowedLink)]
+pub fn green_arrowed_link(props: &GreenArrowedLinkProps) -> Html {
+    let href = props.href.clone();
+    let text = props.text.clone();
+
+    html!(
+        <a href={href} class="rear-text-wrapper">
+            <h3>{text}</h3>
+            <img src="../graphics/arrow-right.svg" />
+        </a>
+    )
+}
+
+#[derive(Properties, PartialEq, Debug)]
 pub struct Props {
     pub img_src: String,
     pub heading: String,
@@ -27,10 +46,7 @@ pub fn floating_box(props: &Props) -> Html {
                     <h2>{heading}</h2>
                 </div>
 
-                <a href={href} class="rear-text-wrapper">
-                    <h3>{green_text}</h3>
-                    <img src="../graphics/arrow-right.svg" />
-                </a>
+                <GreenArrowedLink href={href} text={green_text} />
             </div>
         </div>
     }

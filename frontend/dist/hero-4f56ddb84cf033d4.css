@@ -1,6 +1,6 @@
 .hero {
     display: flex;
-    /* width: 108rem;  */
+    width: auto; 
     /* height: 50.6875rem; */
     padding: 25.375rem 54rem 16.1875rem 4.8125rem;
     align-items: center;

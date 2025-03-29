@@ -38,11 +38,11 @@
 .floating-boxes {
     display: flex;
     /* width: 60%; */
-    /* padding: 4rem 14rem; */
+    padding: 4rem 14rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.625rem;
-    background: var(--white);
+    background: var(--dirty-white);
 }
 
 .floating-boxes-wrapper {
@@ -81,10 +81,20 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 1.4rem;
+    margin: 0;
 }
 
 .rear-text-wrapper > img {
     width: 1rem;
     height: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .floating-boxes-wrapper {
+        flex-direction: column;
+    }
+
+    /* * {
+        flex-direction: column;
+    } */
 }

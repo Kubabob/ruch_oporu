@@ -54,3 +54,9 @@
 .landing-page-description {
     margin-bottom: 4rem;
 }
+
+@media screen and (max-width: 1000px) {
+    .landing-page-description {
+        flex-direction: column;
+    }
+}

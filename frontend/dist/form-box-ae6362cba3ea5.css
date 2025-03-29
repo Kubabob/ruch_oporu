@@ -1,11 +1,16 @@
 
-.contact-box-wrapper {
+.form-box-wrapper {
     display: flex;
     width: 56.25rem;
+    padding: var(--form-spacing-600);
     flex-direction: column;
     align-items: flex-start;
-    gap: 2.25rem;
+    justify-content: center;
+    /* gap: 2.25rem; */
     margin: auto;
+    /* border-radius: 1.5rem;
+    border: var(--stroke-border-size) solid var(--pale-gray);
+    background: var(--body-white); */
 }
 
 .zainteresowanie,
@@ -44,7 +49,7 @@ label {
     color: var(--darker-gray);
 
     /* Body Base */
-    font-family: var(--label-font-family);
+    font-family: var(--body-font), var(--body-font-alt);
     font-size: var(--label-font-size);
     font-style: normal;
     font-weight: var(--label-font-weight);
@@ -52,6 +57,7 @@ label {
 }
 
 input[type=email],
+input[type=text],
 textarea {
     display: flex;
     min-width: 15rem;
@@ -68,6 +74,23 @@ textarea {
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    display: flex;
+    padding: var(--form-spacing-300) var(--form-spacing-400);
+    align-items: center;
+    border-radius: 1rem;
+    border: var(--stroke-border-size) solid var(--pale-gray);
+    background: var(--body-white);
+    color: var(--light-gray);
+    font-family: var(--body-font), var(--body-font-alt);
+    font-size: var(--label-font-size);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    flex-direction: column;
 }
 
 
