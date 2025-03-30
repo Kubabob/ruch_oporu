@@ -21,11 +21,13 @@
     --form-spacing-200: 0.2rem;
     --spacing-1600: 4.2rem;
     --spacing-800: 2rem;
+    --padding-small: 16;
 
     --pale-gray: #d9d9d9;
     --light-gray: #b3b3b3;
     --stroke-border-size: 1px;
     --label-font-weight: 400;
+    --label-font-weight-strong: 600;
     --label-font-size: 16;
 }
 

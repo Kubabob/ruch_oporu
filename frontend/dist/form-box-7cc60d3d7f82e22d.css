@@ -8,9 +8,9 @@
     justify-content: center;
     /* gap: 2.25rem; */
     margin: auto;
-    /* border-radius: 1.5rem;
+    border-radius: 1.5rem;
     border: var(--stroke-border-size) solid var(--pale-gray);
-    background: var(--body-white); */
+    background: var(--body-white);
 }
 
 .zainteresowanie,
@@ -76,8 +76,7 @@ textarea {
     line-height: 150%;
 }
 
-input[type=radio],
-input[type=checkbox] {
+input[type=radio] {
     display: flex;
     padding: var(--form-spacing-300) var(--form-spacing-400);
     align-items: center;

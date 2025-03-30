@@ -113,7 +113,7 @@ pub fn checkbox_input(props: &CheckboxInputProps) -> Html {
     let checked = props.checked.clone();
 
     html!(
-        <div class="checkbox-wrapper">
+        <div>
             <input type="checkbox" id={label3} name={name} value={label4} checked={checked}/>
             <label for={label1}>{label2}</label>
         </div>
