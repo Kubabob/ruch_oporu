@@ -17,7 +17,7 @@ pub fn landing_page() -> Html {
             </section>
 
             <section class="page-description">
-                <div class="text-wrapper" id="description-text-wrapper">
+                <div class="text-wrapper" id="description">
                     <h3 class="description-header">{"Kim jesteśmy i do czego dążymy?"}</h3>
                     <div class="description-wrapper">
                         <p>
