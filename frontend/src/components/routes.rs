@@ -3,6 +3,7 @@ use yew_router::prelude::*;
 
 use super::landing_page::LandingPage;
 use super::form_page::FormPage;
+use super::coming_outs_page::ComingOutsPage;
 
 #[derive(Routable, PartialEq, Clone)]
 pub enum Route {
@@ -12,8 +13,8 @@ pub enum Route {
     // #[at("/o-nas")]
     // AboutUs,
 
-    // #[at("/wysluchaj")]
-    // ComingOuts,
+    #[at("/wysluchaj")]
+    ComingOutsPage,
 
     // #[at("/faq")]
     // FAQ,
@@ -51,7 +52,7 @@ pub fn switch(routes: Route) -> Html {
     match routes {
         Route::Home => html! { <LandingPage /> },
         // Route::AboutUs => html! { <AboutUs /> },
-        // Route::ComingOuts => html! { <ComingOuts /> },
+        Route::ComingOutsPage => html! { <ComingOutsPage /> },
         // Route::FAQ => html! { <FAQ /> },
         Route::FormPage => html! { <FormPage /> },
         // Route::Rules => html! { "Regulamin" },

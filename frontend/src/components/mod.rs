@@ -6,3 +6,4 @@ pub mod form_box;
 pub mod footer;
 pub mod form_page;
 pub mod qa;
+pub mod coming_outs_page;

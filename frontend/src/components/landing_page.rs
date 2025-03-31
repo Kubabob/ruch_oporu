@@ -16,9 +16,9 @@ pub fn landing_page() -> Html {
                 </div>
             </section>
 
-            <section class="landing-page-description">
-                <div class="text-wrapper" id="landing-page-text-wrapper">
-                    <h3 class="kim-jestesmy">{"Kim jesteśmy i do czego dążymy?"}</h3>
+            <section class="page-description">
+                <div class="text-wrapper" id="description-text-wrapper">
+                    <h3 class="description-header">{"Kim jesteśmy i do czego dążymy?"}</h3>
                     <div class="description-wrapper">
                         <p>
                             {"Stowarzyszenie „Gra na Orientację” to wspólnota przyjaciół, założona w odpowiedzi na doświadczenie dyskryminacji ze względu na orientację seksualną w Związku Harcerstwa Rzeczypospolitej."}
@@ -36,9 +36,9 @@ pub fn landing_page() -> Html {
 
             <section class="floating-boxes">
                 <div class="floating-boxes-wrapper">
-                    <FloatingBox img_src="../graphics/floating-box-1.jpg" heading="(Nie)Anonimowe Historie" orange_text="Strefa 'Wysłuchaj'" green_text="Przeczytaj" href="wysluchaj"/>
-                    <FloatingBox img_src="../graphics/floating-box-2.jpg" heading="Opowiedz swoją historię" orange_text="Strefa 'Podziel się'" green_text="Wypełnij anonimowy formularz" href="podziel-sie"/>
-                    <FloatingBox img_src="../graphics/floating-box-3.jpg" heading="Pytania i odpowiedzi" orange_text="Strefa 'FAQ'" green_text="Zobacz więcej" href="faq"/>
+                    <FloatingBox img_src="../graphics/floating-box-1.jpg" heading="(Nie)Anonimowe Historie" orange_text="Strefa 'Wysłuchaj'" black_text="" green_text="Przeczytaj" href="wysluchaj"/>
+                    <FloatingBox img_src="../graphics/floating-box-2.jpg" heading="Opowiedz swoją historię" orange_text="Strefa 'Podziel się'" black_text="" green_text="Wypełnij anonimowy formularz" href="podziel-sie"/>
+                    <FloatingBox img_src="../graphics/floating-box-3.jpg" heading="Pytania i odpowiedzi" orange_text="Strefa 'FAQ'" black_text="" green_text="Zobacz więcej" href="faq"/>
                 </div>
             </section>
 

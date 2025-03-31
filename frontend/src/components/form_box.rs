@@ -71,6 +71,26 @@ pub fn submit_button(props: &SubmitButtonProps) -> Html {
 }
 
 #[derive(Properties, PartialEq, Debug)]
+pub struct LinkedButtonProps {
+    pub label: String,
+    pub href: String
+}
+
+#[function_component(LinkedButton)]
+pub fn linked_button(props: &LinkedButtonProps) -> Html {
+    let label = props.label.clone();
+    let href = props.href.clone();
+
+    html!(
+        <>  
+            <a class="linked-button" href={href}>
+                <input class="submit-button" type="button" value={label}/>
+            </a>
+        </>
+    )
+}
+
+#[derive(Properties, PartialEq, Debug)]
 pub struct RadioInputProps {
     pub label: String,
     pub name: String,

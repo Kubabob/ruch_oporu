@@ -1,19 +1,25 @@
-.landing-page-description {
+.page-description {
     display: flex;
     align-items: center;
-    gap: 7.5rem;
+    gap: 1.5rem;
     justify-content: center;
+    /* width: 56rem; */
+    padding: 0 14rem 0 14rem;
+    justify-content: space-around;
+    text-align: justify;
 }
 
-.landing-page-description >
+.page-description >
 .text-wrapper{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 45rem;
+    align-self: flex-start;
+    /* width: 50rem; */
+    width: 50%;
 }
 
-#landing-page-text-wrapper > .kim-jestesmy {
+.text-wrapper > .description-header {
     align-self: stretch;
     color: var(--green);
     font-family: var(--head-font), var(--head-font-alt);
@@ -50,13 +56,12 @@
     background: var(--body-white);
 } */
 
-.hero,
-.landing-page-description {
+.hero {
     margin-bottom: 4rem;
 }
 
 @media screen and (max-width: 1000px) {
-    .landing-page-description {
+    .page-description {
         flex-direction: column;
     }
 }

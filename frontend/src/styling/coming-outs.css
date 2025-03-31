@@ -1,0 +1,11 @@
+section.coming-outs {
+    display: flex;
+    /* width: 108rem; */
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+h3.description-header#wypelnij-formularz {
+    color: var(--orange);
+}
