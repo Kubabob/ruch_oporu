@@ -1,2 +1,7 @@
 [build]
 public_url = "/ruch_oporu/"
+
+[[hooks]]
+stage="post_build"
+command="cp"
+command_arguments = ["./src/vercel.json", "./dist"]

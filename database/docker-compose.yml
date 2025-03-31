@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: granaorientacje_dev
+    environment:
+      POSTGRES_PASSWORD: RuchOporu123
+      POSTGRES_USER: p2462_dev
+      POSTGRES_DB: p2462_dev
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:

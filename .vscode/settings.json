@@ -36,6 +36,16 @@
             "database": "m2462_development",
             "username": "m2462",
             "askForPassword": true
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "granaorientacje_dev",
+            "database": "p2462_dev",
+            "username": "p2462_dev"
         }
     ],
     "git.ignoreLimitWarning": true

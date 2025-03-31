@@ -45,7 +45,7 @@ pub fn floating_box(props: &Props) -> Html {
     
     html!{
         <div class="floating-box">
-            <img src={img_src} />
+            <img class="floating-box-img" src={img_src} />
             <div class="text-wrapper">
                 <div class="head-text-wrapper">
                     if &orange_text1 != "" {

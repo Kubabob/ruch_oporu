@@ -10,6 +10,8 @@
 .floating-box-img {
     object-fit: cover;
     width: 100%;
+    /* width: auto; */
+    /* height: 10%; */
     border-radius: 1.5rem 1.5rem 0 0;
     /* height: auto; */
     /* display: block; */

@@ -5,8 +5,8 @@ use crate::components::form_box::ContactBox;
 #[function_component(LandingPage)]
 pub fn landing_page() -> Html {
     html! {
-        // <div class="landing-page">
-        <>
+        <div class="landing-page">
+        // <>
             <section class="hero">
                 <div class="hero-text-wrapper">
                     <div class="gra-na-orientacje-wrapper">
@@ -45,7 +45,7 @@ pub fn landing_page() -> Html {
             <section class="contact">
                 <ContactBox />
             </section>
-        // </div>
-        </>
+        </div>
+        // </>
     }
 }
