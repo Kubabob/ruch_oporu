@@ -13,4 +13,4 @@ path = "src/main.rs"
 
 
 [lib]
-crate-type = ["rlib"]
+crate-type = ["lib"]

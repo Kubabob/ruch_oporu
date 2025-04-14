@@ -1,0 +1,16 @@
+[package]
+name = "frontend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+yew = {version="0.21.0", features=["csr"]}
+yew-router = "0.18.0"
+
+[[bin]]
+name = "frontend"
+path = "src/main.rs"
+
+
+[lib]
+crate-type = ["rlib"]

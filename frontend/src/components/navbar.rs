@@ -1,40 +1,24 @@
 use yew::prelude::*;
 
+#[derive(Properties, Debug, PartialEq)]
+pub struct Props{
+    pub color: String
+}
+
 #[function_component(Navbar)]
-pub fn navbar() -> Html {
-    html! {
+pub fn navbar(props: &Props) -> Html {
+    html!(
         <nav>
-            <div class="nav" id="wrapper">
-                <a class="logo-wrapper" href="/">
-                    <img class="logo" src="../graphics/compass.svg" alt="Logo kompasu" />
-                    <div class="logo-text">
-                        <p class="gra-na-orientacje">
-                            {"Gra na Orientację"}
-                        </p>
-                        <p class="stowarzyszenie">
-                            {"Stowarzyszenie"}    
-                        </p>
-                    </div>
-                </a>
-
-                <div class="menu-wrapper">
-                    <a href="/o-nas">{"O Nas"}</a>
-                    <a href="/wysluchaj">{"Wysłuchaj"}</a>
-                    <a href="/podziel-sie">{"Podziel się"}</a>
-                    <details id="wiecej-button">
-                        <summary id="wiecej">{"Więcej"}</summary>
-                        <div id="wiecej-options-wrapper">
-                            <div id="wiecej-options">
-                                <a href="/inne-organizacje">{"Inne organizacje"}</a>
-                                <a href="/wystawa">{"Wystawa"}</a>
-                                <a href="/film">{"Film"}</a>
-                            </div>
-                        </div>
-                    </details>
-
-                    <a href="/kontakt">{"Kontakt"}</a>
-                </div>
+            <a href="/">
+                <img class="logo" src={format!("../graphics/gno_logotyp_poziom_{}.png", props.color)} />
+            </a>
+            <div class="navButtonsWrapper">
+                <a class={classes!("button", props.color.clone())} href="o-nas">{"O Nas"}</a>
+                <a class={classes!("button", props.color.clone())} href="">{"Projekty"}</a>
+                <a class={classes!("button", props.color.clone())} href="">{"Nasze historie"}</a>
+                <a class={classes!("button", props.color.clone())} href="">{"Kontakt"}</a>
             </div>
         </nav>
-    }
+    )
+
 }

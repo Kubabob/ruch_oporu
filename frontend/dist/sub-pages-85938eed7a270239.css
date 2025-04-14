@@ -1,0 +1,8 @@
+.subPage {
+    background-image: url("../graphics/subpage-bg.svg");
+    /* background-color: aliceblue; */
+    /* height: 1000px; */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
+}

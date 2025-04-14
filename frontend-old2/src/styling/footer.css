@@ -1,0 +1,132 @@
+footer {
+    display: flex;
+    padding: var(--spacing-1600) var(--spacing-800) 4rem var(--spacing-800);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem var(--form-spacing-400);
+    flex-wrap: wrap;
+    background: var(--green);
+    margin-top: 4rem;
+
+}
+
+.footer-content-wrapper {
+    display: flex;
+    width: 80rem;
+    max-width: 80rem;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.footer-info {
+    display: flex;
+    height: 9.5rem;
+    flex-direction: column;
+    justify-content:end;
+    align-items:flex-start;
+    flex: 1 0 0;
+}
+
+.footer-links {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1 0 0;
+}
+
+.footer-upper-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--form-spacing-600);
+    align-self: stretch;
+}
+
+.footer-header-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.58331rem;
+}
+
+img.logo#footer {
+    width: 4.75rem;
+    height: 4.75rem;
+}
+
+p.gra-na-orientacje#footer {
+    color: var(--body-white);
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+p.stowarzyszenie#footer {
+    color: var(--body-white);
+    font-size: 0.9375rem;
+    margin-top: 0;
+}
+
+.footer-lower-wrapper {
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--white);
+}
+
+.footer-lower-wrapper > a {
+    color: var(--body-white);
+    font-family: var(--header-font), var(--header-font-alt);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.footer-links {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1 0 0;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+}
+
+.footer-link {
+    display: flex;
+    padding-bottom: var(--form-spacing-400);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    align-self: stretch;
+}
+
+.footer-link > a,
+.footer-link > p {
+    color: var(--body-white);
+    font-family: var(--body-font), var(--body-font-alt);
+    font-size: var(--label-font-size);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 1.4rem */
+    text-decoration: none;
+}
+
+.footer-buttons {
+    display: flex;
+    align-items: center;
+    gap: var(--form-spacing-400);
+}
+
+.footer-buttons > a > img {
+    width: 1.5rem;
+    height: 1.5rem;
+}

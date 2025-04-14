@@ -1,0 +1,9 @@
+pub mod navbar;
+pub mod landing_page;
+pub mod routes;
+pub mod floating_box;
+pub mod form_box;
+pub mod footer;
+pub mod form_page;
+pub mod qa;
+pub mod coming_outs_page;
