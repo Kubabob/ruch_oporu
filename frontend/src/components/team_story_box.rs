@@ -32,16 +32,16 @@ impl Default for Props {
     }
 }
 
-#[function_component(HistoryBox)]
-pub fn history_box(props: &Props) -> Html {
+#[function_component(TeamStoryBox)]
+pub fn team_story_box(props: &Props) -> Html {
     html!(
         <div class="boxWrapper zespolBox">
             if props.name.clone() != "Anonim" {
                 <img class="boxImage" src={
-                    if std::path::Path::new(&format!("../graphics/histories/{}.png", props.name.clone())).exists() {
-                        format!("../graphics/histories/{}.png", props.name.clone())
+                    if std::path::Path::new(&format!("../graphics/team_stories/{}.png", props.name.clone())).exists() {
+                        format!("../graphics/team_stories/{}.png", props.name.clone())
                     } else {
-                        "../graphics/histories/szachownica.png".to_string()
+                        "../graphics/anonymous.svg".to_string()
                     }
                 } />
                 <div class="boxTextWrapperOuter">
@@ -62,7 +62,7 @@ pub fn history_box(props: &Props) -> Html {
                     </div>
                 </div>
             } else {
-                <img class="boxImage" src={"../graphics/histories/szachownica.png".to_string()} />
+                <img class="boxImage" src={"../graphics/team_stories/szachownica.png".to_string()} />
                 <div class="boxTextWrapperOuter">
                     <div class="boxTextWrapperInner">
                         <div class="boxHeadingWrapper">

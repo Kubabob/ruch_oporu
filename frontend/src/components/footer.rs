@@ -26,7 +26,7 @@ pub fn footer() -> Html {
                         <div class="footerButtonWrapper">
                             <a href="/" class="button white">{"Wystawa"}</a>
                             <a href="/" class="button white">{"Film"}</a>
-                            <a href="/" class="button white">{"Kontakt"}</a>
+                            <a href="/kontakt" class="button white">{"Kontakt"}</a>
                         </div>
                         <div class="footerButtonWrapper">
                             <span class="button white">{"Obserwuj nas"}</span>

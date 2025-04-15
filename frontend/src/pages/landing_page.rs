@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use crate::components::footer::Footer;
 use crate::components::navbar::Navbar;
-use crate::components::history_box::HistoryBox;
+use crate::components::team_story_box::TeamStoryBox;
 
 #[function_component(LandingPage)]
 pub fn landing_page() -> Html {
@@ -80,7 +80,7 @@ pub fn landing_page() -> Html {
 
             <div class="boxesLinkWrapper">
               <div class="zespolBoxes">
-                <HistoryBox
+                <TeamStoryBox
                   name="Julia Raczyńska"
                   position="Członkini Zarządu"
                   kiedys="drużynowa harcerek i wędrowniczek, hufcowa, referentka ds harcerek; komendantka 5 akcji zimowych i  7 letnich, działała w Pomorskiej Szkole Instruktorek"
@@ -88,7 +88,7 @@ pub fn landing_page() -> Html {
                   ceni="obserwowanie rozwoju ludzi, z którymi działała, działanie z konkretnymi celami, wyczyn oraz wspólnotę"
                 />
 
-                <HistoryBox
+                <TeamStoryBox
                   name="Natalia Zarębska"
                   position="Członkini Zarządu"
                   kiedys="drużynowa, wicehufcowa, komendantka obozów i kursów metodycznych"
@@ -96,7 +96,7 @@ pub fn landing_page() -> Html {
                   ceni="ideę, metodę, relacje i wspólnotę"
                 />
 
-                <HistoryBox
+                <TeamStoryBox
                   name="Nel Krysiak"
                   position="Członkini Zarządu"
                   kiedys="drużynowa, członkini komendy hufca, organizatorka kursów metodycznych, współorganizatorka obozów letnich"
@@ -105,10 +105,10 @@ pub fn landing_page() -> Html {
                 />
               </div>
 
-              <div class="textWrapper horizontal" style="align-self: end; padding-right: 15%">
+              <a href="nasz-zespol" class="textWrapper horizontal" style="align-self: end; padding-right: 15%">
                   <h4 class="white">{"Poznaj resztę zespołu"}</h4>
                   <img src="../graphics/arrow-right-white.svg" />
-              </div>
+              </a>
             </div>
           </section>
         </div>

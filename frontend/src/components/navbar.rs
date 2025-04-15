@@ -16,7 +16,7 @@ pub fn navbar(props: &Props) -> Html {
                 <a class={classes!("button", props.color.clone())} href="o-nas">{"O Nas"}</a>
                 <a class={classes!("button", props.color.clone())} href="">{"Projekty"}</a>
                 <a class={classes!("button", props.color.clone())} href="nasze-historie">{"Nasze historie"}</a>
-                <a class={classes!("button", props.color.clone())} href="">{"Kontakt"}</a>
+                <a class={classes!("button", props.color.clone())} href="kontakt">{"Kontakt"}</a>
             </div>
         </nav>
     )
