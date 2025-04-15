@@ -3,7 +3,7 @@ use yew_router::prelude::*;
 
 use super::landing_page::LandingPage;
 use super::form_page::FormPage;
-use super::coming_outs_page::ComingOutsPage;
+use super::histories_page::HistoriesPage;
 use super::about_us_page::AboutUs;
 use super::faq_page::FAQ;
 
@@ -15,8 +15,8 @@ pub enum Route {
     #[at("/o-nas")]
     AboutUs,
 
-    #[at("/wysluchaj")]
-    ComingOutsPage,
+    #[at("/nasze-historie")]
+    HistoriesPage,
 
     #[at("/faq")]
     FAQ,
@@ -54,7 +54,7 @@ pub fn switch(routes: Route) -> Html {
     match routes {
         Route::Home => html! { <LandingPage /> },
         Route::AboutUs => html! { <AboutUs /> },
-        Route::ComingOutsPage => html! { <ComingOutsPage /> },
+        Route::HistoriesPage => html! { <HistoriesPage /> },
         Route::FAQ => html! { <FAQ /> },
         Route::FormPage => html! { <FormPage /> },
         // Route::Rules => html! { "Regulamin" },

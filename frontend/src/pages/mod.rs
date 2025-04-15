@@ -1,4 +1,4 @@
-pub mod coming_outs_page;
+pub mod histories_page;
 pub mod form_page;
 pub mod landing_page;
 pub mod routes;

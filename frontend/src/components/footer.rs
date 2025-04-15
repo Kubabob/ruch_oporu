@@ -20,7 +20,7 @@ pub fn footer() -> Html {
                     <div class="footerButtonsWrapper">
                         <div class="footerButtonWrapper">
                             <a href="/o-nas" class="button white">{"O Nas"}</a>
-                            <a href="/" class="button white">{"Nasze historie"}</a>
+                            <a href="/nasze-historie" class="button white">{"Nasze historie"}</a>
                             <a href="/faq" class="button white">{"FAQ"}</a>
                         </div>
                         <div class="footerButtonWrapper">

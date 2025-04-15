@@ -4,7 +4,7 @@ footer {
     /*! width: 100%; */
 /*     height: 280px; */
     
-/*     padding: var(--sds-size-space-1600) 0px 64px 0px; */
+    padding: 0px 0px 5% 0px;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -108,7 +108,7 @@ footer {
 
 @media (width < 1600px) {
     footer {
-        padding: 0% 0% 0% 13.4%;
+        padding: 0% 0% 3% 13.4%;
     }
     
     .footerContentWrapper {

@@ -1,6 +1,7 @@
 use yew::prelude::*;
 use crate::components::footer::Footer;
 use crate::components::navbar::Navbar;
+use crate::components::history_box::HistoryBox;
 
 #[function_component(LandingPage)]
 pub fn landing_page() -> Html {
@@ -8,12 +9,12 @@ pub fn landing_page() -> Html {
     <>
       <section class="landingPage">
         <Navbar color="white" />
-        <div class="teeth">
-          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
-          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
-          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
-          // <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
-        </div>
+        // <div class="teeth">
+        //   <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+        //   <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+        //   <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+        //   // <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+        // </div>
 
 
         <div class="landingPageContentWrapper">
@@ -38,7 +39,7 @@ pub fn landing_page() -> Html {
           </section>
 
           <section class="colorfulButtons boxesWrapper">
-            <div class="boxWrapper" style="background-color: #C6341C;">
+            <div class="boxWrapper colorfulBoxWrapper" style="background-color: #C6341C;">
               <div class="boxHeadingWrapper">
                 <span class="boxHeader white">{"Nasze historie"}</span>
               </div>
@@ -47,7 +48,7 @@ pub fn landing_page() -> Html {
                 <img src="../graphics/arrow-right-white.svg" />
               </div>
             </div>
-            <div class="boxWrapper" style="background-color: #019849;">
+            <div class="boxWrapper colorfulBoxWrapper" style="background-color: #019849;">
               <div class="boxHeadingWrapper">
                 <span class="boxHeader white">{"Nasze projekty"}</span>
               </div>
@@ -56,82 +57,55 @@ pub fn landing_page() -> Html {
                 <img src="../graphics/arrow-right-white.svg" />
               </div>
             </div>
-            <div class="boxWrapper" style="background-color: #54BEE0;">
+            <div class="boxWrapper colorfulBoxWrapper" style="background-color: #54BEE0;">
               <div class="boxHeadingWrapper">
                 <span class="boxHeader white">{"Pytania i odpowiedzi"}</span>
               </div>
               <div class="textWrapper horizontal">
-                <p class="white">{"Zobacz więcej"}</p>
+                <a href="faq">
+                  <p class="white">{"Zobacz więcej"}</p>
+                </a>
                 <img src="../graphics/arrow-right-white.svg" />
               </div>
             </div>
           </section>
 
-          <section class="naszZespol textBlocksWrapper">
-            <div class="textBlockWrapper">
-              <h2 class="white">{"Nasz zespół"}</h2>
-              <p class="white">{r#"Kto stoi za Stowarzyszeniem Gra na Orientacje? Poznaj nasz zarząd oraz wszystkie jawne i tajne osoby członkowskie. To właśnie one budują przestrzeń do rozmowy i torują drogę do zmian. To dzięki nim inicjatywa przerodziła się w czyny. Poniżej przedstawiamy Ci nasze historie i przebyte ścieżki: te harcerskie dawne lub aktualne, a także prywatne i zawodowe."#}</p>
+          <section class="naszZespol">
+            <div class="textBlocksWrapper">
+              <div class="textBlockWrapper">
+                <h2 class="white">{"Nasz zespół"}</h2>
+                <p class="white">{r#"Kto stoi za Stowarzyszeniem Gra na Orientacje? Poznaj nasz zarząd oraz wszystkie jawne i tajne osoby członkowskie. To właśnie one budują przestrzeń do rozmowy i torują drogę do zmian. To dzięki nim inicjatywa przerodziła się w czyny. Poniżej przedstawiamy Ci nasze historie i przebyte ścieżki: te harcerskie dawne lub aktualne, a także prywatne i zawodowe."#}</p>
+              </div>
             </div>
 
             <div class="boxesLinkWrapper">
-              <div class="boxesWrapper zespolBoxes">
-                <div class="boxWrapper zespolBox">
-                  <img class="boxImage" src="../graphics/szachownica.png" />
-                  <div class="boxTextWrapperOuter">
-                    <div class="boxTextWrapperInner">
-                      <div class="boxHeadingWrapper">
-                        <span class="boxHeader black">{"Julia Raczyńska"}</span>
-                        <span class="boxSubHeader orange">{"Członkini Zarządu"}</span>
-                      </div>
-                      <span class="boxText black">
-                        <b>{"Kiedyś w ZHR: "}</b> {"drużynowa harcerek i wędrowniczek, hufcowa, referentka ds harcerek; komendantka 5 akcji zimowych i 7 letnich, działała w Pomorskiej Szkole Instruktorek"}
-                        <br/>
-                        <b>{"Poza ZHR: "}</b> {"studiuje Psychologię oraz Zarządzanie Instytucjami Artystycznymi, animatorka lokalnej społeczności, wspólnie z narzeczoną prowadzi Klub Sąsiedzki"}
-                        <br/>
-                        <b>{"Ceni sobie harcerstwo za: "}</b> {"obserwowanie rozwoju ludzi, z którymi działała, działanie z konkretnymi celami, wyczyn oraz wspólnotę"}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="boxWrapper zespolBox">
-                  <img class="boxImage" src="../graphics/szachownica.png" />
-                  <div class="boxTextWrapperOuter">
-                    <div class="boxTextWrapperInner">
-                      <div class="boxHeadingWrapper">
-                        <span class="boxHeader black">{"Natalia Zarębska"}</span>
-                        <span class="boxSubHeader orange">{"Członkini Zarządu"}</span>
-                      </div>
-                      <span class="boxText black">
-                        <b>{"Kiedyś w ZHR: "}</b> {"drużynowa, wicehufcowa, komendantka obozów i kursów metodycznych"}
-                        <br/>
-                        <b>{"Poza ZHR: "}</b> {"koordynatorka projektów, animatorka społeczna, studentka Zarządzania Instytucjami Artystycznymi na UG"}
-                        <br/>
-                        <b>{"Ceni sobie harcerstwo za: "}</b> {"ideę, metodę, relacje i wspólnotę"}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="boxWrapper zespolBox">
-                  <img class="boxImage" src="../graphics/szachownica.png" />
-                  <div class="boxTextWrapperOuter">
-                    <div class="boxTextWrapperInner">
-                      <div class="boxHeadingWrapper">
-                        <span class="boxHeader black">{"Nel Krysiak"}</span>
-                        <span class="boxSubHeader orange">{"Członkini Zarządu"}</span>
-                      </div>
-                      <span class="boxText black">
-                        <b>{"Kiedyś w ZHR: "}</b> {"drużynowa, członkini komendy hufca, organizatorka kursów metodycznych, współorganizatorka obozów letnich"}
-                        <br/>
-                        <b>{"Poza ZHR: "}</b> {"magistra zarządzania, studentka pedagogiki"}
-                        <br/>
-                        <b>{"Ceni sobie harcerstwo za: "}</b> {"długotrwałe relacje, wspólnotę, bliskość z naturą, przestrzeń do samorozwoju"}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              <div class="zespolBoxes">
+                <HistoryBox
+                  name="Julia Raczyńska"
+                  position="Członkini Zarządu"
+                  kiedys="drużynowa harcerek i wędrowniczek, hufcowa, referentka ds harcerek; komendantka 5 akcji zimowych i  7 letnich, działała w Pomorskiej Szkole Instruktorek"
+                  poza="studiuje Psychologię oraz Zarządzanie Instytucjami Artystycznymi, animatorka lokalnej społeczności, wspólnie z narzeczoną prowadzi Klub Sąsiedzki"
+                  ceni="obserwowanie rozwoju ludzi, z którymi działała, działanie z konkretnymi celami, wyczyn oraz wspólnotę"
+                />
+
+                <HistoryBox
+                  name="Natalia Zarębska"
+                  position="Członkini Zarządu"
+                  kiedys="drużynowa, wicehufcowa, komendantka obozów i kursów metodycznych"
+                  poza="koordynatorka projektów, animatorka społeczna, studentka Zarządzania Instytucjami Artystycznymi na UG"
+                  ceni="ideę, metodę, relacje i wspólnotę"
+                />
+
+                <HistoryBox
+                  name="Nel Krysiak"
+                  position="Członkini Zarządu"
+                  kiedys="drużynowa, członkini komendy hufca, organizatorka kursów metodycznych, współorganizatorka obozów letnich"
+                  poza="magistra zarządzania, studentka pedagogiki"
+                  ceni="długotrwałe relacje, wspólnotę, bliskość z naturą, przestrzeń do samorozwoju"
+                />
               </div>
 
-              <div class="textWrapper horizontal" style="align-self: flex-end;">
+              <div class="textWrapper horizontal" style="align-self: end; padding-right: 15%">
                   <h4 class="white">{"Poznaj resztę zespołu"}</h4>
                   <img src="../graphics/arrow-right-white.svg" />
               </div>
