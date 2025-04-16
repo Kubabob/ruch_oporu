@@ -8,11 +8,15 @@ pub fn footer() -> Html {
             <div class="footerContentWrapper">
                 <div class="footerLogoMailWrapper">
                     <div class="footerLogoWrapper">
-                        <img class="logo" src="../graphics/gno_logotyp_poziom_white.png" />
+                        <a href="">
+                            <img class="logo" src="../graphics/gno_logotyp_poziom_white.png" />
+                        </a>
                     </div>
 
                     <div class="footerMailWrapper">
-                        <h4 class="footerMail white">{"granaorientacje@gmail.com"}</h4>
+                        <a href="mailto:granaorientacje@gmail.com">
+                            <h4 class="footerMail white">{"granaorientacje@gmail.com"}</h4>
+                        </a>
                     </div>
                 </div>
 
@@ -24,8 +28,8 @@ pub fn footer() -> Html {
                             <a href="/faq" class="button white">{"FAQ"}</a>
                         </div>
                         <div class="footerButtonWrapper">
-                            <a href="/" class="button white">{"Wystawa"}</a>
-                            <a href="/" class="button white">{"Film"}</a>
+                            <a href="/wystawa" class="button white">{"Wystawa"}</a>
+                            <a href="/film" class="button white">{"Film"}</a>
                             <a href="/kontakt" class="button white">{"Kontakt"}</a>
                         </div>
                         <div class="footerButtonWrapper">

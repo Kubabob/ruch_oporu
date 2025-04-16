@@ -1,0 +1,6 @@
+.movieImage {
+    width: 397px;
+    height: 599px;
+    flex-shrink: 0;
+    aspect-ratio: 397/599;
+}

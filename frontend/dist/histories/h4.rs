@@ -28,10 +28,8 @@ pub fn h4() -> Html {
             {"Pojechałam na kurs metodyki harcerskiej i bez problemu wyrażałam swoją opinię na różne tematy. Nie planowałam przejmować drużyny, ale jedno doszło do drugiego i podjęłam taką decyzję, z której teraz nie mogłabym być szczęśliwsza. "}
             <br/>
             <br/>
-            {"Zostało mi dane zamknąć stopień instruktorski, ale nie wiem, na jak długo będzie mi dane się z niego cieszyć. Postaram się wykorzystać go na tyle ile mogę zanim zostanie mi zabrany za to, kim się urodziłam i za to, kogo kocham. Dlatego teraz działam anonimowo w Stowarzyszeniu <em>Gra na Orientację</em>, którego jestem częścią od samego początku. 
+            {"Zostało mi dane zamknąć stopień instruktorski, ale nie wiem, na jak długo będzie mi dane się z niego cieszyć. Postaram się wykorzystać go na tyle ile mogę zanim zostanie mi zabrany za to, kim się urodziłam i za to, kogo kocham. Dlatego teraz działam anonimowo w Stowarzyszeniu "} <em>{"Gra na Orientację"}</em>{", którego jestem częścią od samego początku. 
             Nigdy nie przypuszczałam, że nie będę mogła głośno o tym mówić, ale jak ma się na sobie taką odpowiedzialność jak prowadzenie drużyny to zaczynasz stawiać harcerki przed samego siebie. To, co teraz robię, jest dla mnie jak i dla nich.     "}
-            <br/>
-            <br/>
         </p>
     )
 }

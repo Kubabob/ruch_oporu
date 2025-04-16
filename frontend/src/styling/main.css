@@ -72,3 +72,13 @@ a {
 .black {
     color: #000;
 }
+
+/* blockquote {
+    align-self: stretch;
+    justify-self: end;
+} */
+
+cite {
+    align-self: flex-end;
+    justify-self: end;
+}

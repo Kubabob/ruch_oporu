@@ -44,7 +44,9 @@ pub fn landing_page() -> Html {
                 <span class="boxHeader white">{"Nasze historie"}</span>
               </div>
               <div class="textWrapper horizontal">
-                <p class="white">{"Przeczytaj"}</p>
+                <a href="nasze-historie">
+                  <p class="white">{"Przeczytaj"}</p>
+                  </a>
                 <img src="../graphics/arrow-right-white.svg" />
               </div>
             </div>
@@ -53,7 +55,9 @@ pub fn landing_page() -> Html {
                 <span class="boxHeader white">{"Nasze projekty"}</span>
               </div>
               <div class="textWrapper horizontal">
-                <p class="white">{"Zobacz więcej"}</p>
+                <a href="">
+                  <p class="white">{"Zobacz więcej"}</p>
+                </a>
                 <img src="../graphics/arrow-right-white.svg" />
               </div>
             </div>
@@ -64,7 +68,7 @@ pub fn landing_page() -> Html {
               <div class="textWrapper horizontal">
                 <a href="faq">
                   <p class="white">{"Zobacz więcej"}</p>
-                </a>
+                  </a>
                 <img src="../graphics/arrow-right-white.svg" />
               </div>
             </div>

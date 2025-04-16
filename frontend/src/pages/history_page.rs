@@ -1,6 +1,5 @@
 use yew::prelude::*;
 
-use crate::components::histories::h1::H1;
 use crate::components::navbar::Navbar;
 use crate::components::histories::*;
 

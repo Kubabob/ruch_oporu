@@ -2,13 +2,14 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 
 use super::landing_page::LandingPage;
-use super::form_page::FormPage;
 use super::team_stories_page::TeamStoriesPage;
 use super::about_us_page::AboutUs;
 use super::faq_page::FAQ;
 use super::contact_page::ContactPage;
 use super::histories_page::HistoriesPage;
 use super::history_page::HistoryPage;
+use super::exhibition_page::ExhibitionPage;
+use super::movie_page::MoviePage;
 
 #[derive(Routable, PartialEq, Clone)]
 pub enum Route {
@@ -30,23 +31,12 @@ pub enum Route {
     #[at("/faq")]
     FAQ,
 
-    #[at("/podziel-sie")]
-    FormPage,
 
-    // #[at("/regulamin")]
-    // Rules,
+    #[at("/wystawa")]
+    ExhibitionPage,
 
-    // #[at("/rodo")]
-    // RODO,
-
-    // #[at("/wystawa")]
-    // Exhibition,
-
-    // #[at("/film")]
-    // Movie,
-
-    // #[at("/inne-organizacje")]
-    // OtherOrganizations,
+    #[at("/film")]
+    MoviePage,
 
     // #[at("/dokumenty/zgoda-na-wizerunek")]
     // ImageConsent,
@@ -67,12 +57,8 @@ pub fn switch(routes: Route) -> Html {
         Route::HistoryPage { index } => html!(<HistoryPage index={index} />),
         Route::TeamStoriesPage => html!( <TeamStoriesPage /> ),
         Route::FAQ => html! { <FAQ /> },
-        Route::FormPage => html! { <FormPage /> },
-        // Route::Rules => html! { "Regulamin" },
-        // Route::RODO => html! { "RODO" },
-        // Route::Exhibition => html! { <Exhibition /> },
-        // Route::Movie => html! { <Movie /> },
-        // Route::OtherOrganizations => html! { <OtherOrganizations /> },
+        Route::ExhibitionPage => html! { <ExhibitionPage /> },
+        Route::MoviePage => html! { <MoviePage /> },
         // Route::ImageConsent => html! { "Zgoda na wizerunek" },
         Route::ContactPage => html! { <ContactPage /> },
         Route::NotFound => html! { "404 Not Found" },

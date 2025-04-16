@@ -46,7 +46,7 @@ pub fn story_box(props: &Props) -> Html {
                         <a href={format!("nasze-historie/{}", props.index.clone())}>
                             <p class="black">{"Przeczytaj"}</p>
                         </a>
-                        <img src="../graphics/arrow-right.svg" />
+                        <img src="../graphics/arrow-right-black.svg" />
                     </div>
                 </div>
             </div>

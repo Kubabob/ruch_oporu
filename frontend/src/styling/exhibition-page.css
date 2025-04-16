@@ -1,0 +1,12 @@
+.exhibitionImage {
+    width: 403px;
+    height: 570px;
+    flex-shrink: 0;
+    aspect-ratio: 403/570;
+}
+
+.imageTextBlockWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}

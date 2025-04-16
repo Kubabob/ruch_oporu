@@ -7,10 +7,12 @@ pub fn h3() -> Html {
             {r#"“Ludzie boją się tego, czego nie znają”. Szczerze chciałam wierzyć, że odpowiedzią na niechęć, wrogość czy obojętność na krzywdę jest rozmowa, przekonywanie kolejnych osób krok po kroku. Nie liczyłam na cuda, wiedziałam że to bardzo idealistyczne podejście i długotrwały proces. Miałam jednak nadzieję, wizję, która podtrzymywała mnie w naszym środowisku przez 5 lat, tj. od momentu zostania instruktorką i uświadomienia sobie swojej orientacji niedługo po tym. Gdzie mogłoby się to udać, jeśli nie w ZHR? Wśród osób z którymi spędzam tak dużo czasu, z którymi dorastałam i  z którymi wspierałyśmy się, stawiałyśmy przed sobą wyzwania, a później je pokonywałyśmy, z którymi łączyła mnie przyjaźń, zaufanie lub wzajemna życzliwość. Myślałam, że o ile zrobię to umiejętnie i z wyczuciem, jeśli udowodnię swoją wartość, przedstawię argumenty, wytknę niespójności, stanę się dla kogoś bliska, to będę w stanie zmienić czyjeś zdanie, przekonać, że warto działać na rzecz zmian, stanąć w obronie osób nieheteronormatywnych, odrzucić uprzedzenia. Kosztowało mnie to ogrom energii, czasu, nerwów i …. nie udało mi się. Nawet w stosunku do tych, których uznawałam za najbliższych, co jest jednym z najboleśniejszych doświadczeń w moim życiu. Na dłuższy czas przestałam wierzyć w sens działania na rzecz jakichkolwiek zmian społecznych. Skoro nie udało mi się przekonać przyjaciół, to jak przekonam obcych lub tych, którzy są mi otwarcie wrodzy? Poczucie beznadziei stało się tak przemożne, że zaczęłam chodzić na terapię. Przez ostatni rok stopniowo zaczęłam wracać do siebie oraz do myśli zawartych w jednej z moich ulubionych książek."#}
             <br/>
             <br/>
-            <blockquote>
-                {"Doskonałość to kij, którym okłada się to, co możliwe."}
+            <div class="quoteWrapper">
+                <blockquote cite="">
+                    {r#""Doskonałość to kij, którym okłada się to, co możliwe.""#}
+                </blockquote>
                 <cite>{"Nadzieja w mroku, Rebecca Solnit"}</cite>
-            </blockquote>
+            </div>
             <br/>
             <br/>
             {"Nie damy rady przekonać wszystkich do pełni swojego człowieczeństwa.
