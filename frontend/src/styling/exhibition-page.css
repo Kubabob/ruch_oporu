@@ -10,3 +10,9 @@
     flex-direction: row;
     gap: 5%;
 }
+
+.ourProjects {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}

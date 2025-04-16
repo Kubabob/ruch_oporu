@@ -10,6 +10,7 @@ use super::histories_page::HistoriesPage;
 use super::history_page::HistoryPage;
 use super::exhibition_page::ExhibitionPage;
 use super::movie_page::MoviePage;
+use super::projects_page::ProjectsPage;
 
 #[derive(Routable, PartialEq, Clone)]
 pub enum Route {
@@ -31,12 +32,14 @@ pub enum Route {
     #[at("/faq")]
     FAQ,
 
-
     #[at("/wystawa")]
     ExhibitionPage,
 
     #[at("/film")]
     MoviePage,
+
+    #[at("/projekty")]
+    ProjectsPage,
 
     // #[at("/dokumenty/zgoda-na-wizerunek")]
     // ImageConsent,
@@ -59,6 +62,7 @@ pub fn switch(routes: Route) -> Html {
         Route::FAQ => html! { <FAQ /> },
         Route::ExhibitionPage => html! { <ExhibitionPage /> },
         Route::MoviePage => html! { <MoviePage /> },
+        Route::ProjectsPage => html!( <ProjectsPage />),
         // Route::ImageConsent => html! { "Zgoda na wizerunek" },
         Route::ContactPage => html! { <ContactPage /> },
         Route::NotFound => html! { "404 Not Found" },

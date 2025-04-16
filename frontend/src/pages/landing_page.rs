@@ -55,7 +55,7 @@ pub fn landing_page() -> Html {
                 <span class="boxHeader white">{"Nasze projekty"}</span>
               </div>
               <div class="textWrapper horizontal">
-                <a href="">
+                <a href="projekty">
                   <p class="white">{"Zobacz więcej"}</p>
                 </a>
                 <img src="../graphics/arrow-right-white.svg" />

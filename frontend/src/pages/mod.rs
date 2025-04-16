@@ -8,3 +8,4 @@ pub mod histories_page;
 pub mod history_page;
 pub mod exhibition_page;
 pub mod movie_page;
+pub mod projects_page;
