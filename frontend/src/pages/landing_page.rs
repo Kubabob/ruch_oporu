@@ -9,12 +9,17 @@ pub fn landing_page() -> Html {
     <>
       <section class="landingPage">
         <Navbar color="black" />
-        // <div class="teeth">
-        //   <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
-        //   <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
-        //   <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
-        //   // <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
-        // </div>
+        <div class="teeth">
+          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+          <img src="../graphics/lampion_cze_zeby.png" class="tooth" />
+        </div>
 
 
         <div class="landingPageContentWrapper">
@@ -26,7 +31,7 @@ pub fn landing_page() -> Html {
           <section class="oNas textBlocksWrapper">
             <div class="textBlockWrapper">
               <h2 class="black">{"Kim jesteśmy?"}</h2>
-              <p class="black">{r#"Stowarzyszenie „Gra na Orientację” to wspólnota przyjaciół, założona w odpowiedzi na doświadczenie dyskryminacji ze względu na orientację seksualną w Związku Harcerstwa Rzeczypospolitej. Stowarzyszenie tworzą byłe i obecne osoby członkowskie i osoby instruktorskie ZHR, którym zależy na budowaniu bardziej włączającej i bezpiecznej wspólnoty harcerskiej. Działamy w myśl wartości, w których w tej organizacji zostałyśmy wychowane odpowiedzialności za społeczeństwo, braterstwa i wzajemnego szacunku."#}</p>
+              <p class="black">{r#"Stowarzyszenie „Gra na Orientację” to wspólnota przyjaciół, powstała w odpowiedzi na doświadczenia dyskryminacji ze względu na orientację psychoseksualną w Związku Harcerstwa Rzeczypospolitej. Tworzą je osoby związane z ZHR – zarówno te, które pełniły funkcje instruktorskie, jak i osoby aktywne lub wcześniej zaangażowane jako harcerki i harcerze. Wszystkim nam zależy na budowaniu bardziej włączającej, bezpiecznej i opartej na szacunku wspólnoty harcerskiej. Działamy w duchu wartości, które wyniosłyśmy z harcerstwa – odpowiedzialności za społeczeństwo, braterstwa i wzajemnego szacunku."#}</p>
             </div>
             <div class="textBlockWrapper">
               <h2 class="black">{"Czym się zajmujemy?"}</h2>
@@ -39,39 +44,33 @@ pub fn landing_page() -> Html {
           </section>
 
           <section class="colorfulButtons boxesWrapper">
-            <div class="boxWrapper colorfulBoxWrapper" style="background-color: #C6341C;">
+            <a href="nasze-historie" id="historieBox" class="boxWrapper colorfulBoxWrapper">
               <div class="boxHeadingWrapper">
                 <span class="boxHeader black">{"Nasze historie"}</span>
               </div>
               <div class="textWrapper horizontal">
-                <a href="nasze-historie">
                   <p class="black">{"Przeczytaj"}</p>
-                  </a>
                 <img src="../graphics/arrow-right-black.svg" />
               </div>
-            </div>
-            <div class="boxWrapper colorfulBoxWrapper" style="background-color: #019849;">
+            </a>
+            <a href="projekty" id="projektyBox" class="boxWrapper colorfulBoxWrapper">
               <div class="boxHeadingWrapper">
                 <span class="boxHeader black">{"Nasze projekty"}</span>
               </div>
               <div class="textWrapper horizontal">
-                <a href="projekty">
                   <p class="black">{"Zobacz więcej"}</p>
-                </a>
                 <img src="../graphics/arrow-right-black.svg" />
               </div>
-            </div>
-            <div class="boxWrapper colorfulBoxWrapper" style="background-color: #54BEE0;">
+            </a>
+            <a href="faq" id="faqBox" class="boxWrapper colorfulBoxWrapper">
               <div class="boxHeadingWrapper">
                 <span class="boxHeader black">{"Pytania i odpowiedzi"}</span>
               </div>
               <div class="textWrapper horizontal">
-                <a href="faq">
                   <p class="black">{"Zobacz więcej"}</p>
-                  </a>
                 <img src="../graphics/arrow-right-black.svg" />
               </div>
-            </div>
+            </a>
           </section>
 
           <section class="naszZespol">
@@ -85,29 +84,42 @@ pub fn landing_page() -> Html {
             <div class="boxesLinkWrapper">
               <div class="zespolBoxes">
                 <TeamStoryBox
-                  name="Julia Raczyńska"
+                  name="Julia"
                   position="Członkini Zarządu"
                   kiedys="drużynowa harcerek i wędrowniczek, hufcowa, referentka ds harcerek; komendantka 5 akcji zimowych i  7 letnich, działała w Pomorskiej Szkole Instruktorek"
                   poza="studiuje Psychologię oraz Zarządzanie Instytucjami Artystycznymi, animatorka lokalnej społeczności, wspólnie z narzeczoną prowadzi Klub Sąsiedzki"
                   ceni="obserwowanie rozwoju ludzi, z którymi działała, działanie z konkretnymi celami, wyczyn oraz wspólnotę"
+                  zdjecie=true
                 />
 
                 <TeamStoryBox
-                  name="Natalia Zarębska"
+                  name="Natalia"
                   position="Członkini Zarządu"
                   kiedys="drużynowa, wicehufcowa, komendantka obozów i kursów metodycznych"
                   poza="koordynatorka projektów, animatorka społeczna, studentka Zarządzania Instytucjami Artystycznymi na UG"
                   ceni="ideę, metodę, relacje i wspólnotę"
+                  zdjecie=true
                 />
 
                 <TeamStoryBox
-                  name="Nel Krysiak"
+                  name="Nel"
                   position="Członkini Zarządu"
                   kiedys="drużynowa, członkini komendy hufca, organizatorka kursów metodycznych, współorganizatorka obozów letnich"
                   poza="magistra zarządzania, studentka pedagogiki"
                   ceni="długotrwałe relacje, wspólnotę, bliskość z naturą, przestrzeń do samorozwoju"
+                  zdjecie=true
+                />
+
+                <TeamStoryBox
+                  name="Kacper"
+                  kiedys="drużynowy, czynnie angażuje się w pracę chorągwi i Okręgu"
+                  poza="ukończył szkołę muzyczną, studiuje prawo i pracuje w NGO, jego pasją jest praca na rzecz innych"
+                  ceni="ludzi, których w nim poznał oraz relacje, które z nimi nawiązał, dzięki niemu zdobył mnóstwo przydatnych życiowo kompetencji i odkrył chęć niesienia pomocy innym"
+                  zdjecie=true
                 />
               </div>
+
+
 
               <a href="nasz-zespol" class="textWrapper horizontal" style="align-self: end; padding-right: 15%">
                   <h4 class="black">{"Poznaj resztę zespołu"}</h4>

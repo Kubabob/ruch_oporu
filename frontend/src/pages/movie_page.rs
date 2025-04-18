@@ -11,9 +11,9 @@ pub fn movie_page() -> Html {
                 <div class="textBlockWrapper">
                     <h2 class="black">{r#"Film “Też kiedyś byłam harcerką...”"#}</h2>
                     <div class="imageTextBlockWrapper">
-                        <img class="movieImage" src="../graphics/movie/1.jpg" />
+                        <img class="movieImage" src="../graphics/movie/1.png" />
                         <p class="black">
-                            <b>{r#"Film “Też kiedyś byłam harcerką - czyli nasze i wasze historie opowiedziane z miłością” "#}</b>{"jest nietypowym połączeniem fikcji z dokumentem."}
+                            <b>{r#"Film “Też kiedyś byłam harcerką - czyli nasze i wasze historie opowiedziane z miłością” "#}</b>{"jest nietypowym połączeniem fabuły i dokumentu."}
                             <br/>
                             <br/>
                             {"Scenariusz opiera się na wywiadach, które udało nam się przeprowadzić z nieheteronormatywnymi harcerkami i harcerzami. Opowiadają oni o swoim doświadczeniu bycia w organizacji ZHR jako osoby nieheteronormatywne. Przedstawiają swoje historie, które są trudne, zabawne, smutne i piękne. Na podstawie wszystkich zebranych wywiadów tworzymy narratora, który będzie towarzyszył nam w trakcie historii rozgrywającej się na ekranie. Sam film będzie opowiadał o miłości. Miłości między dwiema kobietami, miłości do organizacji, miłości do ludzi i do natury. Bo właśnie o prawo do tej miłości staramy się walczyć.  "}

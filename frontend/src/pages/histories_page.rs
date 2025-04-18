@@ -41,7 +41,7 @@ pub fn histories_page() -> Html {
 
                             <StoryBox
                                 index=3
-                                title=r#"“Ludzie boją się tego, czego nie znają”"#
+                                title="Ludzie boją się tego, czego nie znają"
                                 text="Szczerze chciałam wierzyć, że odpowiedzią na niechęć, wrogość czy obojętność na krzywdę jest rozmowa, przekonywanie kolejnych osób krok po kroku. Nie liczyłam na cuda, wiedziałam że to bardzo idealistyczne podejście..."
                             />
 

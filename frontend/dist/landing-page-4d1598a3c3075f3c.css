@@ -1,3 +1,8 @@
+:root {
+    --stories-count-desktop: 4;
+    --stories-count-mobile: 2;
+}
+
 .landingPage {
     width: 100%;
     height: 100%;
@@ -32,28 +37,28 @@
     z-index: -1;
 }
 
-
 .teeth {
     position: absolute;
     display: flex;
-    top: 0px;
-    right: 0px;
-/*     width: 55%; */
-/*     height: 100%; */
-    gap: 0px;
+    top: 0;
+    right: 0;
+    height: 100%;
     flex-direction: column;
-    align-items: flex-start;
-    pointer-events: none;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow: hidden;
+    z-index: -1;
+    width: 50vw; /* Use viewport width for scaling */
 }
 
 .tooth {
-/*     height: 100%; */
+    height: auto;
+    width: 100%; /* Fill the container width */
     transform: rotate(-90deg);
-    align-self: stretch;
-/*     aspect-ratio: 858.42/1072.96; */
-    /* background-image: url(../graphics/lampion_cze_zeby.png) lightgray 1% / cover no-repeat; */
-    /* background: url(../graphics/lampion_cze_zeby.png) cover no-repeat; */
-    pointer-events: none;
+    margin: -12% 0; /* Increased negative margin to bring teeth closer together */
+    padding: 0;
+    display: block;
+    flex-shrink: 0;
 }
 
 .landingPageContentWrapper {
@@ -61,9 +66,9 @@
     /* width: 1920px; */
     /* height: 3431px; */
     /* flex-shrink: 0; */
-    aspect-ratio: 1920/3431;
+    /*! aspect-ratio: 1920/3431; */
     flex-direction: column;
-    gap: 200px;
+    gap: 50px;
 }
 
 .hero {
@@ -80,10 +85,13 @@
 
 #gra-na-orientacje {
     width: 869px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 #prosze-nie-zrywac {
     align-self: stretch;
+    margin-top: 0px;
 }
 
 .textBlocksWrapper {
@@ -92,7 +100,7 @@
     width: 75%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 100px;
+    gap: 3rem;
 }
 
 .oNas,
@@ -136,8 +144,48 @@ padding-left: 13.4%;
 }
 
 .colorfulBoxWrapper {
-    width: 450px;
+    width: 23.4vw;
     height: 200px;
+}
+
+#wystawaBox {
+    background-color: #E57E38;
+}
+
+#wystawaBox:hover {
+    background-color: rgb(233, 165, 120);
+}
+
+#filmBox {
+    background-color: #AE94C3;
+}
+
+#filmBox:hover {
+    background-color: #ccaee4;
+}
+
+#faqBox {
+    background-color: #54BEE0;
+}
+
+#faqBox:hover {
+    background-color: #7fcde7;
+}
+
+#historieBox {
+    background-color: #C6341C;
+}
+
+#historieBox:hover {
+    background-color: #df5d49;
+}
+
+#projektyBox {
+    background-color: #019849;
+}
+
+#projektyBox:hover {
+    background-color: #55cc8f;
 }
 
 .boxHeadingWrapper {
@@ -156,6 +204,7 @@ padding-left: 13.4%;
     font-weight: 500;
     line-height: normal;
     align-self: stretch;
+    overflow-wrap: break-word;
 }
 
 .boxSubHeader {
@@ -193,7 +242,7 @@ padding-left: 13.4%;
 .boxTextWrapperOuter {
     display: flex;
 /*     width: 91%; */
-    height: 21rem;
+/*     height: 32rem; */
     padding: 24px 20px;
     flex-direction: column;
     align-items: flex-start;
@@ -208,48 +257,59 @@ padding-left: 13.4%;
     flex-direction: column;
     align-items: flex-start;
     height: stretch;
+/*     min-height: 100%; */
     gap: 12px;
     align-self: stretch;
 }
 
 .zespolBoxes {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(var(--stories-count-desktop), 1fr);
     gap: 25px;
     width: 100%;
-    max-width: 1400px;
+/*     max-width: 1400px; */
+    max-width: 50vw;
 }
 
 .zespolBox {
     gap: 0px;
     justify-self: space-between;
     border: 1px rgba(0,0,0,0.1) solid;
-    width: 30rem;
+    width: calc(70vw / var(--stories-count-desktop));
+    height: fit-content;
 }
 
 .boxImage {
     object-fit:cover;
     width: 100%;
     /*! height: 25rem; */
-    border-radius: 15px 15px 0px 0px;
-    background-color: rgba(255,255,255,0.5);
+/*     border-radius: 15px 15px 0px 0px;
+    background-color: rgba(255,255,255,0.5); */
 }
 
-@media (width < 1600px){
+.boxImageContainer {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 15px 15px 0px 0px;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+@media (width < 1000px){
 /*     .teeth {
         transform: scale(var(--w) / 1920);
         
     } */
     
-    .tooth {
-/*         transform: rotate(270deg) scale(0.7) ; */
-/*         transform: scale(0.7); */
-/*         height: 70% */
+/*     .tooth {
            animation-name: vanish;
            animation-duration: 1000ms;
            animation-fill-mode: forwards;
     }
-    
+     */
     .boxesWrapper {
         flex-direction: column;
         align-items: start;
@@ -268,15 +328,23 @@ padding-left: 13.4%;
     }
 }
 
-@media (width < 1700px) {
+/* @media (width < 1700px) {
     .zespolBoxes {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+} */
 
 @media (width < 1400px) {
     .zespolBoxes {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(var(--stories-count-mobile), 1fr);
+    }
+    
+    .zespolBox {
+        width: calc(70vw / var(--stories-count-mobile));
+    }
+    
+    .boxTextWrapperOuter {
+/*         height: 50rem */
     }
 }
 

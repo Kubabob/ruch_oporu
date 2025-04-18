@@ -16,3 +16,9 @@
     flex-direction: row;
     gap: 5%;
 }
+
+@media (width < 1400px) {
+    .imageTextBlockWrapper {
+        flex-direction: column;
+    }
+}

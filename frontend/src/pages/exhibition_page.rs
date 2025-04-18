@@ -45,7 +45,7 @@ pub fn exhibition_page() -> Html {
                         <br/>
                         <b>{"TERMINY:"}</b>
                         <ul>
-                            <li><b>{"30 kwietnia 2025r "}</b> {"- przyjmowanie zgłoszeń poprzez "}<a href="https://docs.google.com/forms/d/e/1FAIpQLScmuKCk-VVhpmu__gnMOpojuXSvzpZvMg7f7JXlgyiFXxMtFw/viewform">{"formularz online"}</a></li>
+                            <li><b>{"30 kwietnia 2025r "}</b> {"- przyjmowanie zgłoszeń poprzez "}<a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScmuKCk-VVhpmu__gnMOpojuXSvzpZvMg7f7JXlgyiFXxMtFw/viewform">{"formularz online"}</a></li>
                             <li><b>{"18 maja 2025r "}</b> {"- deadline przygotowania prac na wystawę."}</li>
                             <li><b>{"czerwiec 2025r "}</b> {"- wernisaż wystawy na terenie Trójmiasta."}</li>
                         </ul>
@@ -53,7 +53,7 @@ pub fn exhibition_page() -> Html {
                         <br/>
                         {"Po zamknięcia formularza, każda z osób zgłoszonych otrzyma od nas wiadomość na podany adres e-mail z dalszymi, szczegółowymi informacjami."}
                         <br/>
-                        <b>{"W razie jakichkolwiek pytań lub wątpliwości prosimy o kontakt na adres "}<a href="mailto:wystawaharc.lgbt@gmail.com">{"wystawaharc.lgbt@gmail.com"}</a></b>
+                        <b>{"W razie jakichkolwiek pytań lub wątpliwości prosimy o kontakt na adres "}<a target="_blank" href="mailto:wystawaharc.lgbt@gmail.com">{"wystawaharc.lgbt@gmail.com"}</a></b>
                         <br/>
                         <br/>
                         {"Załączniki:"}
@@ -64,16 +64,16 @@ pub fn exhibition_page() -> Html {
                         <br/>
                         <br/>
                         {"(tu są pliki załączniki: "}
-                        <a href="https://drive.google.com/drive/folders/18BfUoesu2amXZ0rVrezNzO1peoJ4bHw_?usp=drive_link">{"https://drive.google.com/drive/folders/18BfUoesu2amXZ0rVrezNzO1peoJ4bHw_?usp=drive_link"}</a>
+                        <a target="_blank" href="https://drive.google.com/drive/folders/18BfUoesu2amXZ0rVrezNzO1peoJ4bHw_?usp=drive_link">{"https://drive.google.com/drive/folders/18BfUoesu2amXZ0rVrezNzO1peoJ4bHw_?usp=drive_link"}</a>
                         {" )"}
                         <br/>
                         <br/>
                         <br/>
                         <b>{"Zespół kuratorski wystawy:"}</b>
                         <br/>
-                        {"Barbara Dowgiałło, Nel Krysiak, Zofia Pinkiewicz,"}
+                        {"Barbara, Nel, Zofia,"}
                         <br/>
-                        {"Zuzanna Ruszkiewicz, Natalia Zarębska"}
+                        {"Zuzanna, Natalia"}
 
                     </p>
                 </div>

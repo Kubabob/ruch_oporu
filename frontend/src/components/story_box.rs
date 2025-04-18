@@ -25,15 +25,9 @@ impl Default for Props {
 pub fn story_box(props: &Props) -> Html {
     html!(
         <div class="boxWrapper storyBox">
-            <img class="boxImage" src={
-                if std::path::Path::new(&format!("../graphics/histories/{:#?}.jpg", props.index.clone().to_string())).exists() {
-                    log!("We did it boys!");
-                    format!("../graphics/histories/{:#?}.jpg", props.index.clone().to_string())
-                } else {
-                    log!("We did not do it boys!");
-                    "../graphics/anonymous.svg".to_string()
-                }
-            } />
+        <div class="boxImageContainer">
+            <img loading="lazy" class="boxImage" style="max-width: 50%; height: 50%; align-self: center;" src={"../graphics/gno_logotyp_pion_black.png".to_string()} />
+        </div>
             <div class="boxTextWrapperOuter">
                 <div class="boxTextWrapperInner">
                     <div class="boxHeadingWrapper">

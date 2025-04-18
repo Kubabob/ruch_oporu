@@ -6,7 +6,8 @@
     gap: 0px;
     justify-self: space-between;
     border: 1px rgba(0,0,0,0.1) solid;
-    width: 30rem;
+    width: calc(70vw / var(--stories-count-desktop));
+    height:fit-content;
 }
 
 .naszeHistorie {
@@ -22,4 +23,10 @@
     width:fit-content;
     padding: 1rem;
 /*     justify-items: end; */
+}
+
+@media (width < 1400px) {
+    .storyBox {
+        width: calc(70vw / var(--stories-count-mobile));
+    }
 }

@@ -9,7 +9,7 @@ pub fn footer() -> Html {
                 <div class="footerLogoMailWrapper">
                     <div class="footerLogoWrapper">
                         <a href="">
-                            <img class="logo" src="../graphics/gno_logotyp_poziom_black.png" />
+                            <img loading="lazy" class="logo" src="../graphics/gno_logotyp_poziom_black.png" />
                         </a>
                     </div>
 
@@ -35,12 +35,12 @@ pub fn footer() -> Html {
                         <div class="footerButtonWrapper">
                             <span class="button black">{"Obserwuj nas"}</span>
                             <div class="footerButtonWrapper horizontal">
-                                <a href="/" class="button black">
-                                    <img class="footerIcon" src="../graphics/Logo-Instagram.svg" />
+                                <a href="https://www.instagram.com/granaorientacje/" class="button black" target="_blank">
+                                    <img loading="lazy" class="footerIcon" src="../graphics/Logo-Instagram-black.svg" />
                                 </a>
-                                <a href="/" class="button black">
-                                    <img class="footerIcon" src="../graphics/Logo-Facebook.svg" />
-                                </a>
+                                // <a href="/" class="button black" target="_blank">
+                                //     <img loading="lazy" class="footerIcon" src="../graphics/Logo-Facebook.svg" />
+                                // </a>
                             </div>
                         </div>
                     </div>

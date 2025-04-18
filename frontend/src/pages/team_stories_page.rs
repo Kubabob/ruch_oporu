@@ -28,27 +28,30 @@ pub fn team_stories_page() -> Html {
                 <div class="boxesLinkWrapper">
                     <div class="zespolBoxes">
                         <TeamStoryBox
-                            name="Julia Raczyńska"
+                            name="Julia"
                             position="Członkini Zarządu"
                             kiedys="drużynowa harcerek i wędrowniczek, hufcowa, referentka ds harcerek; komendantka 5 akcji zimowych i  7 letnich, działała w Pomorskiej Szkole Instruktorek"
                             poza="studiuje Psychologię oraz Zarządzanie Instytucjami Artystycznymi, animatorka lokalnej społeczności, wspólnie z narzeczoną prowadzi Klub Sąsiedzki"
                             ceni="obserwowanie rozwoju ludzi, z którymi działała, działanie z konkretnymi celami, wyczyn oraz wspólnotę"
+                            zdjecie=true
                         />
 
                         <TeamStoryBox
-                            name="Natalia Zarębska"
+                            name="Natalia"
                             position="Członkini Zarządu"
                             kiedys="drużynowa, wicehufcowa, komendantka obozów i kursów metodycznych"
                             poza="koordynatorka projektów, animatorka społeczna, studentka Zarządzania Instytucjami Artystycznymi na UG"
                             ceni="ideę, metodę, relacje i wspólnotę"
+                            zdjecie=true
                         />
 
                         <TeamStoryBox
-                            name="Nel Krysiak"
+                            name="Nel"
                             position="Członkini Zarządu"
                             kiedys="drużynowa, członkini komendy hufca, organizatorka kursów metodycznych, współorganizatorka obozów letnich"
                             poza="magistra zarządzania, studentka pedagogiki"
                             ceni="długotrwałe relacje, wspólnotę, bliskość z naturą, przestrzeń do samorozwoju"
+                            zdjecie=true
                         />
 
                         <TeamStoryBox
@@ -58,10 +61,11 @@ pub fn team_stories_page() -> Html {
                         />
 
                         <TeamStoryBox
-                            name="Jagoda Jankowska"
+                            name="Jagoda"
                             kiedys="aktywna instruktorka, prowadziła gdyńską drużynę harcerek, działała w Zarządzie Okręgu i prowadziła Zespół Medialny na Pomorzu"
                             poza="logopedka, dba o prawidłowy rozwój mowy dzieci i młodych dorosłych, w pracy kieruje się zasadą, że nic lepiej nie rozgrzewa aparatu artykulacyjnego niż pożądana dawka śmiechu"
                             ceni="lata spędzone wśród swoich leśnych przyjaciół; uważa, że ZHR wyposażył ją w najpiękniejsze wspomnienia i przyjaźnie jakie mogła kiedykolwiek zdobyć"
+                            zdjecie=true
                         />
 
                         <TeamStoryBox
@@ -71,10 +75,11 @@ pub fn team_stories_page() -> Html {
                         />
 
                         <TeamStoryBox
-                            name="Barbara Dowgiałło"
+                            name="Barbara"
                             kiedys="przyboczna w 25 Drużynie Harcerek im. Danuty Siedzikówny Inki"
                             poza="artystka, muzyczka, kompozytorka, copywriterka, producentka wydarzeń artystycznych, animatorka-społeczna"
                             ceni="nauke tego jak stworzyć coś z niczego, szkołę budowania relacji oraz za danie jej możliwości do życia w bliskości z naturą"
+                            zdjecie=true
                         />
 
                         <TeamStoryBox
@@ -84,25 +89,18 @@ pub fn team_stories_page() -> Html {
                         />
 
                         <TeamStoryBox
-                            name="Katarzyna Rusin"
+                            name="Katarzyna"
                             kiedys="przyboczna, kuchmistrzyni"
                             poza="studentka filologii germańskiej, entuzjastka języków i rozwoju wokalnego"
                             ceni="nawiązane więzi, możliwość wyjścia ze strefy komfortu i poznanie świata z innej perspektywy"
                         />
 
                         <TeamStoryBox
-                            name="Anonim"
-                        />
-
-                        <TeamStoryBox
-                            name="Anonim"
-                        />
-
-                        <TeamStoryBox
-                            name="Klaudia Hołosiewicz"
+                            name="Klaudia"
                             kiedys="instruktorka, drużynowa wędrowniczek przygotowująca następczynię, podejmuje dyskusje na trudne tematy w środowisku"
                             poza="studentka psychologii udzielająca się społecznie i artystycznie"
                             ceni="bycie dla niej bezpieczną przestrzenią do pogłębiania relacji, wsparciem w samorozwoju oraz dobrym przygotowaniem do dorosłości"
+                            zdjecie=true
                         />
 
                         <TeamStoryBox
@@ -112,24 +110,26 @@ pub fn team_stories_page() -> Html {
                         />
 
                         <TeamStoryBox
-                            name="Zofia Pinkiewicz"
+                            name="Zofia"
                             kiedys="drużynowa, przewodnicząca kapituły wędrowniczki"
                             poza="początkująca reżyserka, dramaturżka i dyrygentka; większość swojego czasu spędza w teatrze"
                             ceni="wychowanie w poczuciu odpowiedzialności za otaczającą nas rzeczywistość, zbudowanie wiary w swoją sprawczość i przygodę!"
                         />
 
                         <TeamStoryBox
-                            name="Kacper Romanowski"
+                            name="Kacper"
                             kiedys="drużynowy, czynnie angażuje się w pracę chorągwi i Okręgu"
                             poza="ukończył szkołę muzyczną, studiuje prawo i pracuje w NGO, jego pasją jest praca na rzecz innych"
                             ceni="ludzi, których w nim poznał oraz relacje, które z nimi nawiązał, dzięki niemu zdobył mnóstwo przydatnych życiowo kompetencji i odkrył chęć niesienia pomocy innym"
+                            zdjecie=true
                         />
 
                         <TeamStoryBox
-                            name="Maria Unterschuetz"
+                            name="Maria"
                             kiedys="była przyboczna harcerek i wędrowniczka, angażuje się w ruch wodny jako niezależna harcerka"
                             poza="filozofuje na uczelni i poza nią, pracuje z dziećmi i podróżuje, uczy się języka niemieckiego (nazwisko zobowiązuje)"
                             ceni="porządny warsztat pracy w grupie i umiejętności społecznych,to właśnie harcerstwo zaraziło ją pasją do żeglowania i zamiłowaniem do dzikiej przyrody"
+                            zdjecie=true
                         />
 
                     </div>

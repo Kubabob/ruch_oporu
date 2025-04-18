@@ -16,6 +16,8 @@ pub struct Props {
     pub teraz: String,
     #[prop_or_default]
     pub zachowuje: String,
+    #[prop_or_default]
+    pub zdjecie: bool,
 }
 
 impl Default for Props {
@@ -28,6 +30,7 @@ impl Default for Props {
             ceni: "".to_string(),
             teraz: "".to_string(),
             zachowuje: "".to_string(),
+            zdjecie: false,
         }
     }
 }
@@ -37,13 +40,15 @@ pub fn team_story_box(props: &Props) -> Html {
     html!(
         <div class="boxWrapper zespolBox">
             if props.name.clone() != "Anonim" {
-                <img class="boxImage" src={
-                    if std::path::Path::new(&format!("../graphics/team_stories/{}.png", props.name.clone())).exists() {
-                        format!("../graphics/team_stories/{}.png", props.name.clone())
-                    } else {
-                        "../graphics/anonymous.svg".to_string()
-                    }
-                } />
+                if props.zdjecie {
+                    <img loading="lazy" class="boxImage" src={
+                        format!("../graphics/team_stories/{}.jpeg", props.name.clone())
+                    } />    
+                } else {
+                    <div class="boxImageContainer">
+                        <img loading="lazy" class="boxImage" style="max-width: 50%; height: 50%; align-self: center;" src={"../graphics/gno_logotyp_pion_black.png".to_string()} />
+                    </div>
+                }
                 <div class="boxTextWrapperOuter">
                     <div class="boxTextWrapperInner">
                         <div class="boxHeadingWrapper">
@@ -62,7 +67,9 @@ pub fn team_story_box(props: &Props) -> Html {
                     </div>
                 </div>
             } else {
-                <img class="boxImage" src={"../graphics/team_stories/szachownica.png".to_string()} />
+                <div class="boxImageContainer">
+                    <img loading="lazy" class="boxImage" style="max-width: 50%; height: 50%; align-self: center;" src={"../graphics/gno_logotyp_pion_black.png".to_string()} />
+                </div>
                 <div class="boxTextWrapperOuter">
                     <div class="boxTextWrapperInner">
                         <div class="boxHeadingWrapper">

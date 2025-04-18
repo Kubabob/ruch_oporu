@@ -11,7 +11,7 @@ pub fn about_us() -> Html {
                 <section class="oNas textBlocksWrapper">
                     <div class="textBlockWrapper">
                     <h2 class="black">{"Kim jesteśmy?"}</h2>
-                    <p class="black">{r#"Stowarzyszenie „Gra na Orientację” to wspólnota przyjaciół, założona w odpowiedzi na doświadczenie dyskryminacji ze względu na orientację seksualną w Związku Harcerstwa Rzeczypospolitej. Stowarzyszenie tworzą byłe i obecne osoby członkowskie i osoby instruktorskie ZHR, którym zależy na budowaniu bardziej włączającej i bezpiecznej wspólnoty harcerskiej. Działamy w myśl wartości, w których w tej organizacji zostałyśmy wychowane odpowiedzialności za społeczeństwo, braterstwa i wzajemnego szacunku."#}</p>
+                    <p class="black">{r#"Stowarzyszenie „Gra na Orientację” to wspólnota przyjaciół, powstała w odpowiedzi na doświadczenia dyskryminacji ze względu na orientację psychoseksualną w Związku Harcerstwa Rzeczypospolitej. Tworzą je osoby związane z ZHR – zarówno te, które pełniły funkcje instruktorskie, jak i osoby aktywne lub wcześniej zaangażowane jako harcerki i harcerze. Wszystkim nam zależy na budowaniu bardziej włączającej, bezpiecznej i opartej na szacunku wspólnoty harcerskiej. Działamy w duchu wartości, które wyniosłyśmy z harcerstwa – odpowiedzialności za społeczeństwo, braterstwa i wzajemnego szacunku."#}</p>
                     </div>
                     <div class="textBlockWrapper">
                     <h2 class="black">{"Czym się zajmujemy?"}</h2>
